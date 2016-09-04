@@ -1,10 +1,112 @@
 
 #head {
-    color: aqua;
-    background-color: #aaa;
+    
 }
 
 body {
-    color: #aaa;
-    background-color: #bbb;
+    font-family: "Circular","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+
+}
+
+.index-body {
+    background-image: url("http://tksimages.files.wordpress.com/2013/10/dsc_0286_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+
+.col-md-12 {
+
+}
+
+#navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#navigation li:hover {
+    text-decoration: underline;
+    text-decoration-color: greenyellow;
+    transition: all .25s ease-in-out;
+}
+
+#navigation li{
+    height: 50px;
+   display: inline-block;
+}
+
+#navigation p {
+    font-family: "Georgia", Times, serif;
+    font-weight: bold;
+    font-variant: small-caps;
+    padding: 0;
+    margin-top: 2;
+    margin-left: 85%;
+}
+
+#navigation li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.right li {
+    float: right;
+}
+
+.center li {
+    float: left;
+}
+
+.jumbotron {
+    margin-top: 12%;
+    background: none;
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.jumbotron h1 small {
+    color: aliceblue;
+}
+
+.btn-event {
+    text-align: center;
+    width: 140px;
+    background-color: orange;
+    color: white;
+}
+
+.btn-event:hover {
+    background-color: #ff751a;
+    color: white;
+}
+
+.centerBlock {
+    display: block;
+    margin: 0 auto;
+}
+
+.navBar {
+    background-image: url("http://tksimages.files.wordpress.com/2013/10/dsc_0286_1.jpg");
+    background-size: 100% 700px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.about {
+    height: 700px;
+    background-color: #f2f2f2;
 }
