@@ -66,12 +66,17 @@ body {
 }
 
 .jumbotron {
+    background: none;
+}
+
+.main-statement{
     margin-top: 12%;
     background: none;
     color: white;
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
 .jumbotron h1 small {
     color: aliceblue;
 }
@@ -110,3 +115,15 @@ body {
     height: 700px;
     background-color: #f2f2f2;
 }
+
+.jumbotron h3{
+    color: black;
+}
+
+.headshot {
+    height: 100px;
+    width: 100px;
+}
+
+
+
