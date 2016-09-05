@@ -17,17 +17,17 @@ require '../inc/header.inc';
             <div class="col-md-4 text-center">
                 <h4>John Do</h4>
                 <p>President and founder</p>
-                <img class="headshot"  src="https://upload.wikimedia.org/wikipedia/commons/c/cd/MFettes-headshot.jpg">
+                <img class="headshot"  src="https://upload.wikimedia.org/wikipedia/commons/c/cd/MFettes-headshot.jpg" alt="#">
             </div>
             <div class="col-md-4 text-center">
                 <h4>Jenny Flanders</h4>
                 <p>Head accountant</p>
-                <img class="headshot" src="https://s-media-cache-ak0.pinimg.com/736x/a9/52/8e/a9528e333859163f113304aa240131da.jpg">
+                <img class="headshot" src="https://s-media-cache-ak0.pinimg.com/736x/a9/52/8e/a9528e333859163f113304aa240131da.jpg" alt="#">
             </div>
             <div class="col-md-4 text-center">
                 <h4>Elizabeth Jonhson</h4>
                 <p>Events Coordinator</p>
-                <img class="headshot" src="https://iapp.org/media/headshots/0011a00000DlCshAAF.png">
+                <img class="headshot" src="https://iapp.org/media/headshots/0011a00000DlCshAAF.png" alt="#">
             </div>
         </div>
     </div>
