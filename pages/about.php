@@ -8,7 +8,7 @@ require '../inc/header.inc';
         ?>
         <div class="jumbotron text-center">
             <h3>A Little About Us</h3>
-            <p>Were a small, non for profit company with a desire to bring the local community closer together, by putting on events suitable for the young and old alike. We aim to build friendships, and to help those in need through community funded events, where you get to have a say in everything we do</p>
+            <p>We're a small, non profit company with a desire to bring the local community closer together, by putting on events suitable for the young and old alike. We aim to build friendships, and to help those in need through community funded events, where you get to have a say in everything we do</p>
         </div>
         <div class="text-center">
             <h2>Meet our team</h2>
