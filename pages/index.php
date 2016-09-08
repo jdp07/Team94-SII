@@ -8,7 +8,6 @@
     <div class="container-fluid index-body">
         <!-- HOME NAVIGATION -->
         <div class="col-md-12 navigation">
-            <div class=".col-md-6 .col-md-offset-3">
                 <div class="row">
                     <ul>
                         <div class="col-md-4 col-md-offset-4">
@@ -22,7 +21,6 @@
                             <li class="active"><a href="#">Register</a></li>
                         </div>
                     </ul>
-                </div>
             </div>
         </div>
         <!-- END HOME NAVIGATION -->
@@ -32,9 +30,9 @@
         <div class="centerBlock text-center">
             <button type="button" class="btn btn-event">View Events</button>
         </div>
+        <?php
+        require '../inc/footer.inc';
+        ?>
     </div>
 </body>
 
-<?php
-require '../inc/footer.inc';
-?>

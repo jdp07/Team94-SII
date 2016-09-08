@@ -8,28 +8,36 @@ require '../inc/header.inc';
         ?>
         <div class="jumbotron text-center">
             <h3>A Little About Us</h3>
-            <p>Were a small, non for profit company with a desire to bring the local community closer together, by putting on events suitable for the young and old alike. We aim to build friendships, and to help those in need through community funded events, where you get to have a say in everything we do</p>
+            <p>We're a small, non-profit company with a desire to bring the local community closer together, by putting on events suitable for the young and old alike. We aim to build friendships, and to help those in need through community funded events, where you get to have a say in everything we do</p>
         </div>
         <div class="text-center">
             <h2>Meet our team</h2>
         </div>
         <div class="row">
             <div class="col-md-4 text-center">
-                <h4>John Do</h4>
+                <h4>John Doe</h4>
                 <p>President and founder</p>
+
                 <img class="headshot"  src="https://upload.wikimedia.org/wikipedia/commons/c/cd/MFettes-headshot.jpg" alt="#">
+                <p class="bio"><br>I created this event organisation as a way to bring together my friends and family, and it has progressed into my pride and joy. The growth this company has seen recently has been unprecedented and I can not thank everyone who has been involved enough</p>
             </div>
             <div class="col-md-4 text-center">
                 <h4>Jenny Flanders</h4>
                 <p>Head accountant</p>
                 <img class="headshot" src="https://s-media-cache-ak0.pinimg.com/736x/a9/52/8e/a9528e333859163f113304aa240131da.jpg" alt="#">
+                <p class="bio"><br>Howdy Doodly, I live on Evergreen Tce, live next to a family that never ages and spend my weekends managing the accounts for John's organisation.</p>
             </div>
             <div class="col-md-4 text-center">
-                <h4>Elizabeth Jonhson</h4>
-                <p>Events Coordinator</p>
+                <h4>Elizabeth Johnson</h4>
+                <p class="bio">Events Coordinator</p>
                 <img class="headshot" src="https://iapp.org/media/headshots/0011a00000DlCshAAF.png" alt="#">
+                <p><br>I am a commited member of this community, dedicated to making each and every event as unique as possible. If you have any event ideas for us to implement, please visit our contact page and send me an email!</p>
             </div>
         </div>
+            <?php
+require '../inc/footer.inc';
+?>
     </div>
+
 </body>
 

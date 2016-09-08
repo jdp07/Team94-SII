@@ -1,5 +1,5 @@
 <div class="navBar">
-    <div class="col-md-12 navigation">
+    <div class="col-md-12 navigation nav-background">
         <div class=".col-md-6 .col-md-offset-3">
             <div class="row">
                 <ul>
