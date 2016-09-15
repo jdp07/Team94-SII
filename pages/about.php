@@ -52,7 +52,7 @@ require '../inc/header.inc';
                 <h4>Mila Kunis</h4>
                 <p class="bio">Community Model</p>
                 <img class="headshot" src="../img/milakunis.png" alt="#">
-                <p><br>She is the first contact between customers and our organisation. Also a spokesperson and lead communicaotr at our events</p>
+                <p><br>She is the first contact between customers and our organisation. Also a spokesperson and lead communicator at our events</p>
             </div>
         </div>
             <?php
