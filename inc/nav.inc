@@ -6,7 +6,7 @@
                     <div class="col-md-4 col-md-offset-4">
                         <li class="active"><a href="index.php">Home</a></li>
                         <li class="active"><a href="#">Events</a></li>
-                        <li class="active"><a href="#">Contact</a></li>
+                        <li class="active"><a href="contact.php">Contact</a></li>
                         <li class="active"><a href="about.php">About</a></li>
                     </div>
                     <div class="col-md-2 col-md-offset-2">

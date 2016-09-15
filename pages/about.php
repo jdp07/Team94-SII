@@ -31,7 +31,28 @@ require '../inc/header.inc';
                 <h4>Elizabeth Johnson</h4>
                 <p class="bio">Events Coordinator</p>
                 <img class="headshot" src="https://iapp.org/media/headshots/0011a00000DlCshAAF.png" alt="#">
-                <p><br>I am a commited member of this community, dedicated to making each and every event as unique as possible. If you have any event ideas for us to implement, please visit our contact page and send me an email!</p>
+                <p><br>I am a commited member of this community, dedicated to making each and every event as unique as possible. If you have any event ideas for us to implement, please visit our contact page and send us an email!</p>
+            </div>
+        </div><br><br>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h4>AnoNyMous</h4>
+                <p>Not Sure What He Does</p>
+
+                <img class="headshot"  src="../img/head.jpg" alt="#">
+                <p class="bio"><br>No one has ever seen his face, no one really knows what his job is</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h4>Jack Bek</h4>
+                <p>Community Communicator</p>
+                <img class="headshot" src="../img/head_2.jpg" alt="#">
+                <p class="bio"><br>I am the lead communicator, assisting in the organisation of events and communication between the organisation and the sponsors</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h4>Mils Kunis</h4>
+                <p class="bio">Community Model</p>
+                <img class="headshot" src="../img/milakunis.png" alt="#">
+                <p><br>She is the first contact between customers and our organisation. Also a spokesperson and lead communicaotr at our events</p>
             </div>
         </div>
             <?php
