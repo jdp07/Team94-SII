@@ -49,7 +49,7 @@ require '../inc/header.inc';
                 <p class="bio"><br>I am the lead communicator, assisting in the organisation of events and communication between the organisation and the sponsors</p>
             </div>
             <div class="col-md-4 text-center">
-                <h4>Mils Kunis</h4>
+                <h4>Mila Kunis</h4>
                 <p class="bio">Community Model</p>
                 <img class="headshot" src="../img/milakunis.png" alt="#">
                 <p><br>She is the first contact between customers and our organisation. Also a spokesperson and lead communicaotr at our events</p>
