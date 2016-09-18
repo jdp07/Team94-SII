@@ -173,7 +173,7 @@ body {
 }
 
 /*
-    Jonny's CSS changes
+    Individual Event Page
 */
 
 .event {
@@ -181,16 +181,23 @@ body {
     height: 100%;
 }
 
-.event-head h2{
+.event-head h1{
     text-align: center;
     margin-top: 80px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .event-sponsors {
-
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: red;
 }
 
-/*
-    Jonny's CSS changes
-*/
+.event-information {
+    text-align: center;
+}
+
+.event-description {
+    text-align: center;
+}
