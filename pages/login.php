@@ -32,12 +32,12 @@ if (isset($_POST['login'])){ //If logged in, redirect to index page
  //Checks whether already logged in or not
         if(isset($_SESSION['loggedIn'])){
             unset($_SESSION['loggedIn']);
-            header("Location: http://{$_SERVER['HTTP_HOST']}/CommunityOrg/pages/index.php");
+            header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/index.php");
             exit();
         }
 		
 		else {
-			header("Location: http://{$_SERVER['HTTP_HOST']}/CommunityOrg/pages/register.php");
+			header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/register.php");
 		}
 ?>
 </body>
