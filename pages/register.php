@@ -1,3 +1,71 @@
+<!DOCTYPE html>
 <?php
-echo "Resgister here";
+require '../inc/header.inc';
+require '../inc/check.inc';
+require '../inc/setPDO.inc';
+
 ?>
+<html>
+	<body>
+		<?php
+        require '../inc/nav.inc';  
+        
+		
+		?>
+		
+        <div class="container-fluid register">
+
+            <br><br><br><br>
+            <div class="row">
+                <div class="col-md-6 text-center login">
+                    <form id="loginForm" name="loginForm" method="post" action="login.php">
+                        <h4>Login Here</h4><br>
+                        <table align="center">
+                            <tr>
+                                <td class="l">Email: </td>
+                                <td class="r"><input type="text" name="email" id="email"></td>
+                            </tr>
+                            <tr>
+                                <td class="l">Password: </td>
+                                <td class="r"><input type="password" name="password" id="password"></td>
+                            </tr>
+                        </table><br><br>
+                        <input type="submit" name="login" value="Login" onclick="return validateLogin();">
+                    </form>
+                
+                </div>
+                <div class="col-md-6 text-center reg">
+                    <h4>Register Here</h4><br>
+                    <form id="regForm" name="regForm" method="post" action="complete.php">
+                        <table align="center">
+                            <tr>
+                                <td class="l">First Name: </td>
+                                <td class="r"><input type="text" name="fName"></td>
+                            </tr>
+                            <tr>
+                                <td class="l">Surname: </td>
+                                <td class="r"><input type="text" name="sName"></td>
+                            </tr>
+                            <tr>
+                                <td class="l">Email: </td>
+                                <td class="r"><input type="email" name="email"></td>
+                            </tr>
+                            <tr>
+                                <td class="l">Password: </td>
+                                <td class="r"><input type="password" name="password1"></td>
+                            </tr>
+                            <tr>
+                                <td class="l">Verify Password: </td>
+                                <td class="r"><input type="password" name="password2"></td>
+                            </tr>
+                        </table><br><br>
+                        <input type="submit" value="Register">
+                    </form>
+                </div>
+            </div>
+            <?php
+            require '../inc/footer.inc';
+            ?>
+        </div>
+    </body>
+</html>
