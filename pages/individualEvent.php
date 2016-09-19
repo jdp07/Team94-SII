@@ -21,9 +21,13 @@
 			<h4>Coca-Cola</h4>
 			<h4>Queensland University of Technology</h4>
 		</div>
+
+		<!-- Event information and description row -->
+
 		<div class = "row">
-			<div class = "col-md-6 event-information">
-				Details
+			<div class = "col-md-2"></div>
+			<div class = "col-md-4 event-information">
+				<h3>Details</h3>
 				<table class = "table table-bordered">
 					<tr>
 						<td>Address</td><td>105 Albert Street, BRISBANE QLD 4000</td>
@@ -39,9 +43,21 @@
 					</tr>
 				</table>
 			</div>
-			<div class = "col-md-6 event-description">
-				meme
+			<div class = "col-md-4 event-description">
+				<h3>What it's about</h3>
+				<p>Hey guys! It's (hopefully) the end of everyone's mid-semester exams! Let's celebrate by grabbing some pizza together in the city after our classes!</p>
 			</div>
+			<div class = "col-md-2"></div>
+		</div>
+
+		<!-- # people going and button row -->
+		<div class = "row">
+			<div class = "col-md-4"></div>
+			<div class = "col-md-4 event-rsvp">
+				<p><b>23</b> people have RSVP'd to this event. Click the button below to RSVP now!</p>
+				<button type="button" class="btn btn-event">RSVP</button>
+			</div>
+			<div class = "col-md-4"></div>
 		</div>
 
         <?php

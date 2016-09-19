@@ -196,8 +196,23 @@ body {
 
 .event-information {
     text-align: center;
+    font-weight: bold;
+}
+
+.event-information h3 {
+    text-decoration: underline;
 }
 
 .event-description {
+    text-align: center;
+}
+
+.event-description h3 {
+    text-decoration: underline;
+}
+
+.event-rsvp {
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
