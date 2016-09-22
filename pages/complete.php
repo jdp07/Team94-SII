@@ -39,18 +39,18 @@
                 die();
                 exit;
 			}
-			function generateSalt($max = 15) { //Generates a random salt of 15 chars made of the character list below
-				$characterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?";
-				$i = 0;
-				$salt = "";
-				while ($i < $max) { //loops 15 times and assigns it to $salt
-					$salt .= $characterList{mt_rand(0, (strlen($characterList) - 1))};
-					$i++;
-				}
-				return $salt;
-			}
+			// function generateSalt($max = 15) { //Generates a random salt of 15 chars made of the character list below
+			// 	$characterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?";
+			// 	$i = 0;
+			// 	$salt = "";
+			// 	while ($i < $max) { //loops 15 times and assigns it to $salt
+			// 		$salt .= $characterList{mt_rand(0, (strlen($characterList) - 1))};
+			// 		$i++;
+			// 	}
+			// 	return $salt;
+			// }
             $userType = 'M'; //Basic user type will be member
-			$salt = generateSalt(); //Generates the salt based on the random characters
+			$salt = uniqid(); //Generates the salt based on the random characters
 			$query=$pdo->prepare("INSERT INTO USER_TB (firstName, lastName, email, userType, password, salt)VALUES(:fname, :sname, :email, :userType, SHA2(CONCAT(:password, :salt), 0), :salt)"); 
 			$query->bindvalue(':fname', $fname);
 			$query->bindvalue(':sname', $sname);
