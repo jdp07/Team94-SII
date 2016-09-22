@@ -9,7 +9,7 @@
 
 
 
-    $pdo = new PDO('mysql:host=localhost', 'root', 'password');
+    $pdo = new PDO('mysql:host=localhost;dbname=TEAM94', 'root', 'password');
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
     
 ?>
