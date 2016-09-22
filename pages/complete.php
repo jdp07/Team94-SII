@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<body>
-        <?php
+        <?php //Includes
             require '../inc/header.inc';
             require '../inc/setPDO.inc';
             require '../inc/nav.inc';
@@ -28,7 +28,7 @@
 				header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/register.php");
 				echo "All fields are required";
 			}
-			if ($_POST['password1']==$_POST['password2']){
+			if ($_POST['password1']==$_POST['password2']){ //Password validation
 				$password=$_POST['password1'];
 			}
 			else {
@@ -45,7 +45,7 @@
 				}
 				return $salt;
 			}
-            $userType = 'M';
+            $userType = 'M'; //Basic user type will be member
 			$salt = generateSalt(); //Generates the salt based on the random characters
 			$query=$pdo->prepare("INSERT INTO USER_TB (firstName, lastName, email, userType, password, salt)VALUES(:fname, :sname, :email, :userType, SHA2(CONCAT(:password, :salt), 0), :salt)"); 
 			$query->bindvalue(':fname', $fname);
