@@ -9,8 +9,6 @@ require '../inc/setPDO.inc';
 	<body>
 		<?php
         require '../inc/nav.inc';  
-        
-		
 		?>
 		
         <div class="container-fluid register">
@@ -24,10 +22,10 @@ require '../inc/setPDO.inc';
                             <tr>
                                 <td class="l">Email: </td>
                                 <td class="r"><input type="text" name="email" id="email"></td>
-                            </tr>
+                            </tr><br>
                             <tr>
                                 <td class="l">Password: </td>
-                                <td class="r"><input type="password" name="password" id="password"></td>
+                                <td class="r"><input type="password" name="password" id="password"></td><br>
                             </tr>
                         </table><br><br>
                         <input type="submit" name="login" value="Login" onclick="return validateLogin();">
@@ -36,27 +34,27 @@ require '../inc/setPDO.inc';
                 </div>
                 <div class="col-md-6 text-center reg">
                     <h4>Register Here</h4><br>
-                    <form id="regForm" name="regForm" method="post" action="complete.php">
+                    <form id="regForm" name="regForm"  action="complete.php" method="post">
                         <table align="center">
                             <tr>
                                 <td class="l">First Name: </td>
-                                <td class="r"><input type="text" name="fName"></td>
-                            </tr>
+                                <td class="r"><input type="text" name="fName" required></td>
+                            </tr><br>
                             <tr>
                                 <td class="l">Surname: </td>
-                                <td class="r"><input type="text" name="sName"></td>
-                            </tr>
+                                <td class="r"><input type="text" name="sName" required></td>
+                            </tr><br>
                             <tr>
                                 <td class="l">Email: </td>
-                                <td class="r"><input type="email" name="email"></td>
-                            </tr>
+                                <td class="r"><input type="email" name="email" required></td>
+                            </tr><br>
                             <tr>
                                 <td class="l">Password: </td>
-                                <td class="r"><input type="password" name="password1"></td>
-                            </tr>
+                                <td class="r"><input type="password" name="password1" required></td>
+                            </tr><br>
                             <tr>
                                 <td class="l">Verify Password: </td>
-                                <td class="r"><input type="password" name="password2"></td>
+                                <td class="r"><input type="password" name="password2" required></td>
                             </tr>
                         </table><br><br>
                         <input type="submit" value="Register">

@@ -19,7 +19,7 @@ require '../inc/header.inc';
                 <p>If you wish to access our place via public transport</p>
                 <p>you will need to walk 12km from the city. Sorry</p>
             </div>
-            <div class="cold-md-4 contact-map text-right">
+            <div class="col-md-4 col-md-offset-1 contact-map text-right">
                 <img src="../img/map.png">
             </div>
         </div>
