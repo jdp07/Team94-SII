@@ -29,8 +29,7 @@ function validateSName(regForm) {
 }
 
 function validatePWord(regForm) {
-    if (document.regForm.password1.value === document.regForm.password2.value) {
-        alert("Password don't match");
+    if (document.regForm.password1.value === document.regForm.password2.value) { 
         return true;
     }
     return false;

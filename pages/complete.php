@@ -35,7 +35,7 @@
 			}
 			else {
 				header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/register.php");
-				echo "Password do not match";
+				echo "Password do not match /php";
                 die();
                 exit;
 			}

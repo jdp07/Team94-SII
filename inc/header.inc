@@ -14,6 +14,6 @@
 
 <link rel="stylesheet" href="../css/style.css?v=1.7">
 
-<script type="text/javascript" src="../js/script.js?v=1.2"></script>
+<script type="text/javascript" src="../js/script.js?v=1.3"></script>
 </head>
 
