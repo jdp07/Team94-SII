@@ -7,7 +7,7 @@ function validateLogin(loginForm) {
 
 /** Registration Validation **/
 
-/*
+
 function validateFName(regForm) {
     var name = document.regForm.fName.value;
     name = name.trim();
@@ -28,10 +28,19 @@ function validateSName(regForm) {
     return true;
 }
 
+function validatePWord(regForm) {
+    if (document.regForm.password1.value === document.regForm.password2.value) {
+        alert("Password don't match");
+        return true;
+    }
+    return false;
+}
+
 function validateReg(regForm) {
     validateFName(regForm);
     validateSName(regForm);
+    validatePWord(regForm);
 }
-*/
+
 
 /** END Registration Validation **/

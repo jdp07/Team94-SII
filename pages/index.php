@@ -12,7 +12,7 @@
                     <ul>
                         <div class="col-md-4 col-md-offset-4">
                             <li class="active"><a href="index.php">Home</a></li>
-                            <li class="active"><a href="#">Events</a></li>
+                            <li class="active"><a href="individualEvent.php">Events</a></li>
                             <li class=""><a href="contact.php">Contact</a></li>
                             <li class="active"><a href="about.php">About</a></li>
                         </div>

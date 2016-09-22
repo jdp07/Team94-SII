@@ -21,11 +21,11 @@ require '../inc/setPDO.inc';
                         <table align="center">
                             <tr>
                                 <td class="l">Email: </td>
-                                <td class="r"><input type="text" name="email" id="email"></td>
-                            </tr><br>
+                                <td class="r"><input type="email" name="email" id="email" required></td>
+                            </tr>
                             <tr>
                                 <td class="l">Password: </td>
-                                <td class="r"><input type="password" name="password" id="password"></td><br>
+                                <td class="r"><input type="password" name="password" id="password" required></td>
                             </tr>
                         </table><br><br>
                         <input type="submit" name="login" value="Login" onclick="return validateLogin();">
@@ -39,25 +39,25 @@ require '../inc/setPDO.inc';
                             <tr>
                                 <td class="l">First Name: </td>
                                 <td class="r"><input type="text" name="fName" required></td>
-                            </tr><br>
+                            </tr>
                             <tr>
                                 <td class="l">Surname: </td>
                                 <td class="r"><input type="text" name="sName" required></td>
-                            </tr><br>
+                            </tr>
                             <tr>
                                 <td class="l">Email: </td>
                                 <td class="r"><input type="email" name="email" required></td>
-                            </tr><br>
+                            </tr>
                             <tr>
                                 <td class="l">Password: </td>
                                 <td class="r"><input type="password" name="password1" required></td>
-                            </tr><br>
+                            </tr>
                             <tr>
                                 <td class="l">Verify Password: </td>
                                 <td class="r"><input type="password" name="password2" required></td>
                             </tr>
                         </table><br><br>
-                        <input type="submit" value="Register">
+                        <input type="submit" value="Register" onclick="return validateReg();">
                     </form>
                 </div>
             </div>
