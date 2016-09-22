@@ -37,7 +37,7 @@
         <div class="jumbotron text-center main-statement">
             <h1>Come and Join Your Local Community Events<br><small>You'll get a lot out of it</small></h1>
         </div>
-        <div class="centerBlock text-center">
+        <div class="centerBlock text-center"> <!-- Event button -->
             <button type="button" class="btn btn-event">View Events</button>
         </div>
         <?php

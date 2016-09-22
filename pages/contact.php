@@ -3,13 +3,13 @@ require '../inc/header.inc';
 ?>
 <body>
     <div class="container-fluid contact">
-        <?php
+        <?php //Navigation bar
             require '../inc/nav.inc';
         ?>
         <div class="contact-head text-center">
             <h2>Contact Us</h2>
         </div>
-        <div class="row">
+        <div class="row"> <!-- Basic static contact information -->
             <div class="col-md-4 contact-information text-center">
                 <h3>TheKommunityService</h3>
                 <p>Ph: (07) 1298 2810</p>
@@ -19,13 +19,13 @@ require '../inc/header.inc';
                 <p>If you wish to access our place via public transport</p>
                 <p>you will need to walk 12km from the city. Sorry</p>
             </div>
-            <div class="col-md-4 col-md-offset-1 contact-map text-right">
+            <div class="col-md-4 col-md-offset-1 contact-map text-right"> <!-- Map diplay -->
                 <img src="../img/map.png">
             </div>
         </div>
         
     </div>
-<?php
+<?php //Footer
 require '../inc/footer.inc';
 ?>
 </body>

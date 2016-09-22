@@ -9,7 +9,6 @@
 		<div id="container-fluid">
 		<?php
 			$errors = array();
-			//validateText($errors, $_POST, 'dob'); //Validates the DOB field
 			$check=$pdo->query("SELECT * FROM USER_TB");
 			while ($row = $check->fetch(PDO::FETCH_ASSOC)){ //Makes sure username isn't taken
 				$name = $row['email'];
@@ -47,7 +46,7 @@
 				return $salt;
 			}
             $userType = 'M';
-			$salt = generateSalt(); 
+			$salt = generateSalt(); //Generates the salt based on the random characters
 			$query=$pdo->prepare("INSERT INTO USER_TB (firstName, lastName, email, userType, password, salt)VALUES(:fname, :sname, :email, :userType, SHA2(CONCAT(:password, :salt), 0), :salt)"); 
 			$query->bindvalue(':fname', $fname);
 			$query->bindvalue(':sname', $sname);

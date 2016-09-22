@@ -14,7 +14,7 @@ require '../inc/setPDO.inc';
         <div class="container-fluid register">
 
             <br><br><br><br>
-            <div class="row">
+            <div class="row"> <!--Start login form-->
                 <div class="col-md-6 text-center login">
                     <form id="loginForm" name="loginForm" method="post" action="login.php">
                         <h4>Login Here</h4><br>
@@ -28,12 +28,12 @@ require '../inc/setPDO.inc';
                                 <td class="r"><input type="password" name="password" id="password" required></td>
                             </tr>
                         </table><br><br>
-                        <input type="submit" name="login" value="Login" onclick="return validateLogin();">
+                        <input type="submit" name="login" value="Login" onclick="return validateLogin();"> <!--returns javascript validation -->
                     </form>
-                
+                <!--END login form-->
                 </div>
                 <div class="col-md-6 text-center reg">
-                    <h4>Register Here</h4><br>
+                    <h4>Register Here</h4><br> <!--Start registration form-->
                     <form id="regForm" name="regForm"  action="complete.php" method="post">
                         <table align="center">
                             <tr>
@@ -57,11 +57,11 @@ require '../inc/setPDO.inc';
                                 <td class="r"><input type="password" name="password2" required></td>
                             </tr>
                         </table><br><br>
-                        <input type="submit" value="Register" onclick="return validateReg();">
+                        <input type="submit" value="Register" onclick="return validateReg();"> <!--returns javascript validation -->
                     </form>
-                </div>
+                </div><!--END registration form-->
             </div>
-            <?php
+            <?php //Footer include
             require '../inc/footer.inc';
             ?>
         </div>
