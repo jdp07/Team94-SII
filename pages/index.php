@@ -28,7 +28,16 @@
                               
                                 ?>
                             </a></li>
-                            <li class="active"><a href="register.php">Register</a></li>
+                            <li class="active"><a href="register.php">
+                                <?php
+                                if(!isset($_SESSION['loggedIn'])){
+                                echo "Register";
+                                } else {
+                                    echo "Donate";
+                                } 
+                              
+                                ?>
+                                </a></li>
                         </div>
                     </ul>
             </div>
