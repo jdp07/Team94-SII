@@ -55,7 +55,7 @@
 			$query->bindvalue(':fname', $fname);
 			$query->bindvalue(':sname', $sname);
 			$query->bindvalue(':email', $email);
-            $query->bindvalue('userType', $userType);
+            $query->bindvalue(':userType', $userType);
 			$query->bindvalue(':password', $password);
             $query->bindvalue(':salt', $salt);
 			$query->execute();//Inserts all the registration data into the DB
