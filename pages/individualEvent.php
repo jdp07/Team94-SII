@@ -16,6 +16,12 @@
 		<div class = "event-head">
 			<h1>City Meetup at Domino's Pizza!</h1>
 		</div>
+
+		<div class = "event-donations">
+			<h3>Donation Goal: <b>$150</b></h3>
+			<h3>Amounted Donated: <b>$85</b></h3>
+		</div>
+
 		<div class = "event-sponsors">
 			<h2>Sponsors</h2>
 			<h4>Coca-Cola</h4>
