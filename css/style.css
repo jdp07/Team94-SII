@@ -67,8 +67,6 @@ body {
     font-size: 15px;
 }
 
-
-
 .navBar {
     padding: 0;
     margin: 0;
@@ -120,7 +118,7 @@ body {
     padding: 0;
 }
 
-.about, .contact {
+.about, .contact, .register {
     background-color: #f2f2f2;
     height: 100%;
 }
@@ -149,6 +147,10 @@ body {
 }
 
 .about .footer {
+    margin-top: 100px;
+}
+
+.register .footer {
     margin-top: 100px;
 }
 
@@ -215,4 +217,8 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+}
+
+.reg {
+    border-left: 1px solid;
 }

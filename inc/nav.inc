@@ -10,8 +10,18 @@
                         <li class="active"><a href="about.php">About</a></li>
                     </div>
                     <div class="col-md-2 col-md-offset-2">
-                        <li class="active"><a href="#">Login</a></li>
-                        <li class="active"><a href="#">Register</a></li>
+                        <li class="active"><a href="login.php">
+                        <?php
+                        session_start();
+                        if(!isset($_SESSION['loggedIn'])){
+                            echo "Login";
+                        } else {
+                            echo "Logout";
+                        } 
+                          
+                            ?>
+                        </a></li>
+                        <li class="active"><a href="register.php">Register</a></li>
                     </div>
                 </ul>
             </div>
