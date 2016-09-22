@@ -188,6 +188,11 @@ body {
     margin-bottom: 30px;
 }
 
+.event-donations h3{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 .event-sponsors {
     text-align: center;
     margin-top: 40px;
