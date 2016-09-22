@@ -27,6 +27,8 @@
 			else { //Redirects back to Register.php if fields aren't set
 				header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/register.php");
 				echo "All fields are required";
+                die();
+                exit;
 			}
 			if ($_POST['password1']==$_POST['password2']){ //Password validation
 				$password=$_POST['password1'];
@@ -34,6 +36,8 @@
 			else {
 				header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/register.php");
 				echo "Password do not match";
+                die();
+                exit;
 			}
 			function generateSalt($max = 15) { //Generates a random salt of 15 chars made of the character list below
 				$characterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?";

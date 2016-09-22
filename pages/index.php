@@ -28,16 +28,20 @@
                               
                                 ?>
                             </a></li>
-                            <li class="active"><a href="register.php">
+                            <li class="active">
                                 <?php
                                 if(!isset($_SESSION['loggedIn'])){
+                                echo "<a href='register.php'>";
                                 echo "Register";
+                                echo "</a>";
                                 } else {
+                                    echo "<a href='individualEvent.php'>";
                                     echo "Donate";
+                                    echo "</a>";
                                 } 
                               
                                 ?>
-                                </a></li>
+                            </li>
                         </div>
                     </ul>
             </div>
