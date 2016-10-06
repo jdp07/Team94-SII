@@ -9,6 +9,14 @@
 		<!-- Include home navigation -->
 		<?php
 			require '../inc/nav.inc';
+
+			function createHeading($heading) {
+				echo('<div class = "row">');
+				echo('	<div class = "col-md-4">');
+				echo('		<div class = "row">');
+				echo('			<div class = "col-md-2"></div>');
+				echo('				<h1>'.$heading.'</h1>');
+			}
 		?>
 		
 		<!-- Event list header -->
