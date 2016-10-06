@@ -242,8 +242,9 @@ body {
 }
 
 .event-list-info {
-    border: 2px solid black;
+    border: 3px solid black;
     border-radius: 5px;
+    margin-bottom: 40px;
 }
 
 .event-list-info-name {

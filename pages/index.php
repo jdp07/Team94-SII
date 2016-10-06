@@ -12,7 +12,7 @@
                     <ul>
                         <div class="col-md-4 col-md-offset-4">
                             <li class="active"><a href="index.php">Home</a></li>
-                            <li class="active"><a href="individualEvent.php">Events</a></li>
+                            <li class="active"><a href="eventList.php">Events</a></li>
                             <li class=""><a href="contact.php">Contact</a></li>
                             <li class="active"><a href="about.php">About</a></li>
                         </div>
@@ -35,7 +35,7 @@
                                 echo "Register";
                                 echo "</a>";
                                 } else {
-                                    echo "<a href='individualEvent.php'>";
+                                    echo "<a href='eventList.php'>";
                                     echo "Donate";
                                     echo "</a>";
                                 } 
