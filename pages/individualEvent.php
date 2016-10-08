@@ -12,14 +12,34 @@
         ?>
         <!-- END HOME NAVIGATION -->
 
-
+		<?php
+			if(!isset($_POST['eventID'])){
+				echo "Error loading webpage";
+				die();
+			}
+			
+		
+			$result = $pdo->prepare('SELECT * FROM EVENTS_TB WHERE EVENTS_TB.eventID = :id');
+			$result->bindvalue(':id', $_POST['eventID'];
+			$result->execute();
+		
+			while ($row = $result->fetch(PDO::FETCH_ASSOC)){
+				$eventName = $row['eventName'];
+				$details = $row['eventDetail'];
+				$address = $row['eventAddress'];
+				$startTime = $row['eventDate'];
+				$finishTime = $row['eventFinish'];
+				$donationGoal = $row['donationGoal'];
+				$minCost = $row['minCost'];
+		?>
+		
 		<div class = "event-head">
-			<h1>City Meetup at Domino's Pizza!</h1>
+			<h1><?php $eventName ?></h1>
 		</div>
 
 		<div class = "event-donations">
-			<h3>Donation Goal: <b>$150</b></h3>
-			<h3>Amounted Donated: <b>$85</b></h3>
+			<h3>Donation Goal: <b><?php $donationGoal ?></b></h3>
+			<h3>Amounted Donated: <b>$</b></h3>
 		</div>
 
 		<div class = "event-sponsors">
@@ -36,26 +56,28 @@
 				<h3>Details</h3>
 				<table class = "table table-bordered">
 					<tr>
-						<td>Address</td><td>105 Albert Street, BRISBANE QLD 4000</td>
+						<td>Address</td><td><?php $address ?></td>
 					</tr>
 					<tr>
-						<td>Date</td><td>25th September 2016 7:00pm</td>
+						<td>Date</td><td><?php $startTime ?></td>
 					</tr>
 					<tr>
-						<td>Finish</td><td>25th September 2016 9:00pm</td>
+						<td>Finish</td><td><?php $finishTime ?></td>
 					</tr>
 					<tr>
-						<td>Cost</td><td>To be decided...</td>
+						<td>Cost</td><td><?php $minCost ?></td>
 					</tr>
 				</table>
 			</div>
 			<div class = "col-md-4 event-description">
 				<h3>What it's about</h3>
-				<p>Hey guys! It's (hopefully) the end of everyone's mid-semester exams! Let's celebrate by grabbing some pizza together in the city after our classes!</p>
+				<p><?php $details ?></p>
 			</div>
 			<div class = "col-md-2"></div>
 		</div>
-
+		<?php 
+			} //END While loop for database data 
+		?> 
 		<!-- # people going and button row -->
 		<div class = "row">
 			<div class = "col-md-4"></div>
