@@ -20,7 +20,7 @@
 			
 		
 			$result = $pdo->prepare('SELECT * FROM EVENTS_TB WHERE EVENTS_TB.eventID = :id');
-			$result->bindvalue(':id', $_POST['eventID'];
+			$result->bindvalue(':id', $_POST['eventID']);
 			$result->execute();
 		
 			while ($row = $result->fetch(PDO::FETCH_ASSOC)){
