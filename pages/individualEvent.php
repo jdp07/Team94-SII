@@ -13,14 +13,15 @@
         <!-- END HOME NAVIGATION -->
 
 		<?php
-			if(!isset($_POST['eventID'])){
+			if(!isset($_GET['eventID'])){
 				echo "Error loading webpage";
 				die();
 			}
-			
+
+			require '../inc/setPDO.inc';
 		
 			$result = $pdo->prepare('SELECT * FROM EVENTS_TB WHERE EVENTS_TB.eventID = :id');
-			$result->bindvalue(':id', $_POST['eventID']);
+			$result->bindvalue(':id', $_GET['eventID']);
 			$result->execute();
 		
 			while ($row = $result->fetch(PDO::FETCH_ASSOC)){
@@ -34,11 +35,11 @@
 		?>
 		
 		<div class = "event-head">
-			<h1><?php $eventName ?></h1>
+			<h1><?php echo $eventName ?></h1>
 		</div>
 
 		<div class = "event-donations">
-			<h3>Donation Goal: <b><?php $donationGoal ?></b></h3>
+			<h3>Donation Goal: <b>$<?php echo $donationGoal ?></b></h3>
 			<h3>Amounted Donated: <b>$</b></h3>
 		</div>
 
@@ -56,22 +57,22 @@
 				<h3>Details</h3>
 				<table class = "table table-bordered">
 					<tr>
-						<td>Address</td><td><?php $address ?></td>
+						<td>Address</td><td><?php echo $address ?></td>
 					</tr>
 					<tr>
-						<td>Date</td><td><?php $startTime ?></td>
+						<td>Date</td><td><?php echo $startTime ?></td>
 					</tr>
 					<tr>
-						<td>Finish</td><td><?php $finishTime ?></td>
+						<td>Finish</td><td><?php echo $finishTime ?></td>
 					</tr>
 					<tr>
-						<td>Cost</td><td><?php $minCost ?></td>
+						<td>Cost</td><td><?php echo $minCost ?></td>
 					</tr>
 				</table>
 			</div>
 			<div class = "col-md-4 event-description">
 				<h3>What it's about</h3>
-				<p><?php $details ?></p>
+				<p><?php echo $details ?></p>
 			</div>
 			<div class = "col-md-2"></div>
 		</div>

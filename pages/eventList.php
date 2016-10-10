@@ -120,7 +120,7 @@
 						echo('			<div id = "event-list-info-date">'.$date.'</div>');
 						echo('			<div class = "event-list-info-heading">Location: </div>');
 						echo('			<div id = "event-list-info-location">'.$address.'</div><br/>');
-						echo('			<center><form action = "individualEvent.php?eventID='.$id.'"><input type="submit" class="btn btn-event" value = "More info" name = "eventID"></form></center><br/>');
+						echo('			<center><form action = "individualEvent.php" method = "get"><button type="submit" value = "'.$id.'"class="btn btn-event" name = "eventID">More info</button></form></center><br/>');
 						echo('		</div>');
 						echo('	<div class = "col-md-2"></div>');
 						echo('	</div>');
@@ -183,7 +183,7 @@
 						echo('			<div id = "event-list-info-date">'.$date.'</div>');
 						echo('			<div class = "event-list-info-heading">Location: </div>');
 						echo('			<div id = "event-list-info-location">'.$address.'</div><br/>');
-						echo('			<center><form action = "individualEvent.php?eventID='.$id.'"><input type="submit" class="btn btn-event" value = "More info"></form></center><br/>');
+						echo('			<center><form action = "individualEvent.php" method = "get"><button type="submit" value = "'.$id.'"class="btn btn-event" name = "eventID">More info</button></form></center><br/>');
 						echo('		</div>');
 						echo('	<div class = "col-md-2"></div>');
 						echo('	</div>');
