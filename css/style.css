@@ -1,6 +1,6 @@
 @charset "UTF-8";
 #head {
-    
+
 }
 
 body {
@@ -230,6 +230,19 @@ body {
 .reg {
     border-left: 1px solid;
 }
+
+#vol-Schdule-List {
+	border: 1px solid black;
+	max-width: 600px;
+	margin: auto;
+	text-align: center;
+}
+
+.vol-table {
+	text-align: center;
+	margin: auto;
+}
+
 
 /*
     Event List Page

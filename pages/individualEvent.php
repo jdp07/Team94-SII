@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
-<?php require '../inc/header.inc'; ?>
+<?php
+	require '../inc/header.inc';
+	require '../inc/setPDO.inc';
+?>
 
 
 
@@ -83,12 +86,20 @@
 		<div class = "row">
 			<div class = "col-md-4"></div>
 			<div class = "col-md-4 event-rsvp">
-				<p><b>23</b> people have RSVP'd to this event. Click the button below to RSVP now!</p>
+<!-- 				<p><b>23</b> people have RSVP'd to this event. Click the button below to RSVP now!</p> -->
+				<?php 
+					require '../inc/getNumOfAtt.inc';
+				?>
 				<button type="button" class="btn btn-event">RSVP</button>
 			</div>
 			<div class = "col-md-4"></div>
 		</div>
-
+		<div id='vol-Schedule-List'>
+				<?php // get table
+                    require '../inc/getVolTable.inc';
+                    getResult();
+            	?>
+        </div>
         <?php
         require '../inc/footer.inc';
         ?>
