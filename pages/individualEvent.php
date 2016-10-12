@@ -22,11 +22,11 @@
 			}
 
 			require '../inc/setPDO.inc';
-		
+
 			$result = $pdo->prepare('SELECT * FROM EVENTS_TB WHERE EVENTS_TB.eventID = :id');
 			$result->bindvalue(':id', $_GET['eventID']);
 			$result->execute();
-		
+
 			while ($row = $result->fetch(PDO::FETCH_ASSOC)){
 				$eventName = $row['eventName'];
 				$details = $row['eventDetail'];
@@ -36,7 +36,7 @@
 				$donationGoal = $row['donationGoal'];
 				$minCost = $row['minCost'];
 		?>
-		
+
 		<div class = "event-head">
 			<h1><?php echo $eventName ?></h1>
 		</div>
@@ -79,15 +79,15 @@
 			</div>
 			<div class = "col-md-2"></div>
 		</div>
-		<?php 
-			} //END While loop for database data 
-		?> 
+		<?php
+			} //END While loop for database data
+		?>
 		<!-- # people going and button row -->
 		<div class = "row">
 			<div class = "col-md-4"></div>
 			<div class = "col-md-4 event-rsvp">
 <!-- 				<p><b>23</b> people have RSVP'd to this event. Click the button below to RSVP now!</p> -->
-				<?php 
+				<?php
 					require '../inc/getNumOfAtt.inc';
 				?>
 				<button type="button" class="btn btn-event">RSVP</button>
@@ -95,10 +95,10 @@
 			<div class = "col-md-4"></div>
 		</div>
 		<div id='vol-Schedule-List'>
-				<?php // get table
-                    require '../inc/getVolTable.inc';
-                    getResult();
-            	?>
+			<?php // get table
+                require '../inc/getVolTable.inc';
+                getResult();
+            ?>
         </div>
         <?php
         require '../inc/footer.inc';
