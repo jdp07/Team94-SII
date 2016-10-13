@@ -1,7 +1,7 @@
 <?php
 	//echo "jihye test version 0.0.3";
 	$eventID = $_GET["eventID"];
-		
+
 	function getResult(){
 		global $eventID;
 		require 'setPDO.inc';
@@ -11,7 +11,7 @@
 		$getScheduleList->execute();
 
 		$num = 1;
-		
+
 		echo "<p style='text-align: center;'>Volunteers list</p>";
 
 		echo "<table class='vol-Schedule-List-table'>" .
@@ -25,9 +25,9 @@
             "<th>Name</th>" .
             "<th>Email</th>" .
             "<th>Shift Start</th>" .
-            "<th>Shift Finsish</th>" .
+            "<th>Shift Finish</th>" .
             "</tr>";
-		
+
 		foreach ($getScheduleList as $items) {
             echo "<tr>";
             echo "<td>" . $num . "</td>";
@@ -36,7 +36,7 @@
             echo "<td>" . $items['shiftStart'] . "</td>";
             echo "<td>" . $items['shiftFinish'] . "</td>";
             echo "</tr>";
-            
+
             $num = $num + 1;
         }
         echo "</table>";
