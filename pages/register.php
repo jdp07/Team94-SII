@@ -34,7 +34,7 @@ require '../inc/setPDO.inc';
                 </div>
                 <div class="col-md-6 text-center reg">
                     <h4>Register Here</h4><br> <!--Start registration form-->
-                    <form id="regForm" name="regForm"  action="complete.php" method="post">
+                    <form id="regForm" name="regForm"  action="complete.php" onsubmit="return validateReg()" method="post">
                         <table align="center">
                             <tr>
                                 <td class="l">First Name: </td>
@@ -57,7 +57,7 @@ require '../inc/setPDO.inc';
                                 <td class="r"><input type="password" name="password2" required></td>
                             </tr>
                         </table><br><br>
-                        <input type="submit" value="Register" onclick="return validateReg();"> <!--returns javascript validation -->
+                        <input type="submit" value="Register"> <!--returns javascript validation -->
                     </form>
                 </div><!--END registration form-->
             </div>

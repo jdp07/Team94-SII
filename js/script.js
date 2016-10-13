@@ -36,9 +36,10 @@ function validatePWord(regForm) {
 }
 
 function validateReg(regForm) {
-    validateFName(regForm);
-    validateSName(regForm);
-    validatePWord(regForm);
+    if (validateFName(regForm) && validateSName(regForm) && validatePWord(regForm)){
+		return true;
+	}
+	return false;
 }
 
 

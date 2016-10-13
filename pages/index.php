@@ -51,7 +51,7 @@
             <h1>Come and Join Your Local Community Events<br><small>You'll get a lot out of it</small></h1>
         </div>
         <div class="centerBlock text-center"> <!-- Event button -->
-            <button type="button" class="btn btn-event">View Events</button>
+			<button type="button" class="btn btn-event" onclick="location.href='eventList.php';">View Events</button>
         </div>
         <?php
         require '../inc/footer.inc';
