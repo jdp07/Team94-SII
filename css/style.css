@@ -231,18 +231,23 @@ body {
     border-left: 1px solid;
 }
 
-#vol-Schdule-List {
+.vol-Schedule-List-table {
 	border: 1px solid black;
 	max-width: 600px;
 	margin: auto;
 	text-align: center;
 }
 
-.vol-table {
+.vol-Schedule-List {
 	text-align: center;
 	margin: auto;
 }
 
+.vol-Schedule-List-table th, .vol-Schedule-List-table td {
+	border:1px solid black;
+	text-align: center;
+	padding: 0px 5px 0px 5px;
+}
 
 /*
     Event List Page
@@ -268,3 +273,4 @@ body {
 .event-list-info-heading {
     font-weight: bold;
 }
+
