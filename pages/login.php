@@ -9,13 +9,13 @@ if (isset($_POST['login'])){ //If logged in, redirect to index page
                 if (!isset($_SESSION)){
                     session_start(); 
                     $_SESSION['loggedIn'] = true;
-                  //  echo "Logged In";
-                   header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/index.php");
+                    //echo "Logged In";
+                    header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/index.php");
                     exit();
                 }
                 else {
                     $_SESSION['loggedIn'] = true;
-                   // echo "Logged In";
+                    //echo "Logged In";
                     header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/index.php");
                     exit();
                 }

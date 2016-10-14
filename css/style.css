@@ -274,3 +274,11 @@ body {
     font-weight: bold;
 }
 
+/*
+    404 Page
+*/
+
+.error-info {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}

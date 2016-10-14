@@ -17,8 +17,7 @@
 
 		<?php
 			if(!isset($_GET['eventID'])){
-				echo "Error loading webpage";
-				die();
+				header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/404.php");
 			}
 
 			require '../inc/setPDO.inc';
@@ -27,7 +26,12 @@
 			$result->bindvalue(':id', $_GET['eventID']);
 			$result->execute();
 
-			while ($row = $result->fetch(PDO::FETCH_ASSOC)){
+			//If there isn't any results for that
+			if($result->rowCount() < 1) {
+				header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/404.php");
+			}
+
+			foreach($result as $row) {
 				$eventName = $row['eventName'];
 				$details = $row['eventDetail'];
 				$address = $row['eventAddress'];
@@ -101,7 +105,7 @@
             ?>
         </div>
         <?php
-        require '../inc/footer.inc';
+        	require '../inc/footer.inc';
         ?>
     </div>
 </body>
