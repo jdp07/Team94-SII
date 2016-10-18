@@ -31,6 +31,18 @@
 				header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/404.php");
 			}
 
+			//Check amount donated for this event
+			$query = $pdo->prepare('SELECT SUM(donationAmount) as donationAmount FROM DONATION_TB WHERE eventID = :id');
+			$query->bindvalue(':id', $_GET['eventID']);
+			$query->execute();
+
+			foreach($query as $row) {
+				$totalDonated = $row['donationAmount'];
+				if($totalDonated == "") {
+					$totalDonated = '0';
+				}
+			}
+
 			foreach($result as $row) {
 				$eventName = $row['eventName'];
 				$details = $row['eventDetail'];
@@ -47,7 +59,7 @@
 
 		<div class = "event-donations">
 			<h3>Donation Goal: <b>$<?php echo $donationGoal ?></b></h3>
-			<h3>Amounted Donated: <b>$</b></h3>
+			<h3>Amounted Donated: <b>$<?php echo $totalDonated ?></b></h3>
 		</div>
 
 		<div class = "event-sponsors">
