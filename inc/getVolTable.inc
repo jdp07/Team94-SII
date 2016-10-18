@@ -1,5 +1,4 @@
 <?php
-	//echo "jihye test version 0.0.3";
 	$eventID = $_GET["eventID"];
 
 	function getResult(){
@@ -28,18 +27,29 @@
             "<th>Shift Finish</th>" .
             "</tr>";
 
-		foreach ($getScheduleList as $items) {
-            echo "<tr>";
-            echo "<td>" . $num . "</td>";
-            echo "<td>" . $items['firstName'] . " " . $items['lastName'] . "</td>";
-            echo "<td>" . $items['email'] . "</td>";
-            echo "<td>" . $items['shiftStart'] . "</td>";
-            echo "<td>" . $items['shiftFinish'] . "</td>";
-            echo "</tr>";
 
-            $num = $num + 1;
+        if ($getScheduleList->rowCount() == 0) {
+            echo "<tr>";
+            echo "<td colspan='5'>No result</td>";
+            echo "</tr>";
         }
+
+        else {
+    		foreach ($getScheduleList as $items) {
+                echo "<tr>";
+                echo "<td>" . $num . "</td>";
+                echo "<td>" . $items['firstName'] . " " . $items['lastName'] . "</td>";
+                echo "<td>" . $items['email'] . "</td>";
+                echo "<td>" . $items['shiftStart'] . "</td>";
+                echo "<td>" . $items['shiftFinish'] . "</td>";
+                echo "</tr>";
+
+                $num = $num + 1;
+            }
+        }
+
         echo "</table>";
+
     }
 
 ?>
