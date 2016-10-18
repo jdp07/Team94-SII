@@ -11,13 +11,13 @@
 
 
 //This is the one that works on the server, needs to be uncommented //before pulled from the server
- //    $pdo = new PDO('mysql:host=localhost;dbname=TEAM94', 'root', 'password');
-	// $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO('mysql:host=localhost;dbname=TEAM94', 'root', 'password');
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 
 
-	$pdo = new PDO('mysql:host=localhost;dbname=TEAM94', 'root', 'password123');
-	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+	// $pdo = new PDO('mysql:host=localhost;dbname=TEAM94', 'root', 'password123');
+	// $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
 ?>

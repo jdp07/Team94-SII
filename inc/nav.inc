@@ -36,14 +36,16 @@
                                     $query->execute();
 
                                     echo('<div class = "moneyDonated">Amount donated: $');
-                                    if($query->rowCount() > 0) {
-                                        foreach($query as $result) {
-                                            echo($result['moneyDonated'].'</div>');
+
+                                    foreach($query as $result) {
+                                        if($result['moneyDonated'] == '') {
+                                            echo('0');
+                                        }
+                                        else {
+                                            echo($result['moneyDonated']);
                                         }
                                     }
-                                    else {
-                                        echo('0</div>');
-                                    }
+                                    echo('</div>');
                                 } 
                               
                                 ?>

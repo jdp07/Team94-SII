@@ -202,6 +202,56 @@
 				}
 			}
 
+			//If they're logged in show a donations table
+			if(isset($_SESSION['loggedIn'])) {
+
+				//Query for donations
+				$query = $pdo->prepare('SELECT * FROM TEAM94.DONATION_TB WHERE userID = :id ORDER BY date DESC');
+				$query->bindvalue(':id', $_SESSION['id']);
+				$query->execute();
+
+				if($query->rowCount() > 0) {
+
+					//Your donations header
+					echo('<div class = "col-md-2"></div><div class = "col-md-8">');
+					echo('	<div class = "event-list-donation-head"><h1>Your donations</h1></div>');
+					echo('	<table class = "table table-striped">');
+					echo('		<tr class = "table-heading"><td>Event name</td><td>Donation amount</td><td>Donation date</td></tr>');
+
+					//Find event name, donation amount and donation date
+					foreach($query as $result) {
+						$eventID = $result['eventID'];
+						$donationAmount = $result['donationAmount'];	//Donation amount
+						$donationDate = $result['date'];	//Donation date
+
+						$date = new DateTime($donationDate);
+						$date = $date->format('d M Y h:ia');
+
+						//Find event name
+						$queryA = $pdo->prepare('SELECT * FROM TEAM94.EVENTS_TB WHERE eventID = :id');
+						$queryA->bindvalue(':id', $eventID);
+						$queryA->execute();
+
+						foreach($queryA as $result) {
+							$eventName = $result['eventName'];	//Event name
+						}
+
+						echo('<tr><td>'.$eventName.'</td>');
+						echo('<td>$'.$donationAmount.'</td>');
+						echo('<td>'.$date.'</td></tr>');
+					}
+
+					//Finish rest of table
+					echo('	</table>');
+					echo('</div><div class = "col-md-2"></div>');
+				}
+
+				//If they haven't donated anything
+				else {
+					echo('<h2 class = "event-list-donation-head">Please consider donating to one of the events!</h2>');
+				}
+			}
+
 			//Upcoming Event list header
 			createHeading('Upcoming Events');
 
