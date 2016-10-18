@@ -9,7 +9,7 @@
                         <li class="active"><a href="contact.php">Contact</a></li>
                         <li class="active"><a href="about.php">About</a></li>
                     </div>
-                    <div class="col-md-2 col-md-offset-2">
+                    <div class="col-md-3 col-md-offset-1">
                         <li class="active"><a href="login.php">
                         <?php
                         session_start();
@@ -24,13 +24,26 @@
                         <li class="active">
                                 <?php
                                 if(!isset($_SESSION['loggedIn'])){
-                                echo "<a href='register.php'>";
-                                echo "Register";
-                                echo "</a>";
-                                } else {
-                                    echo "<a href='eventList.php'>";
-                                    echo "Donate";
+                                    echo "<a href='register.php'>";
+                                    echo "Register";
                                     echo "</a>";
+                                } else {
+                                    //Calculate amount donated
+                                    require '../inc/setPDO.inc';
+
+                                    $query = $pdo->prepare('SELECT sum(donationAmount) as moneyDonated FROM TEAM94.DONATION_TB where userID = :id');
+                                    $query->bindvalue(':id', $_SESSION['id']);
+                                    $query->execute();
+
+                                    echo('<div class = "moneyDonated">Amount donated: $');
+                                    if($query->rowCount() > 0) {
+                                        foreach($query as $result) {
+                                            echo($result['moneyDonated'].'</div>');
+                                        }
+                                    }
+                                    else {
+                                        echo('0</div>');
+                                    }
                                 } 
                               
                                 ?>

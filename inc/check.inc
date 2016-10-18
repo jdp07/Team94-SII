@@ -19,8 +19,15 @@
 		$query->bindvalue(':password', $password);
 		$query->bindvalue(':salt', $salt['salt']);
 		$query->execute();
-		return $query->rowCount() > 0;
 
+		if($query->rowCount() > 0) {
+			session_start();
+			foreach($query as $result) {
+				$_SESSION['id'] = $result['userID'];
+			}
+		}
+
+		return $query->rowCount() > 0;
 
 	}
 
