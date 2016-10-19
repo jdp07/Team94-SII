@@ -64,7 +64,7 @@ function rsvpSubmitFnc(eventID, id) {
 //     console.log("aaaaa");
 
     var rsvpform = document.getElementById(id);
-    rsvpform.action = '../inc/insertRSVP.php';
+    rsvpform.action = '../pages/insertRSVP.php';
     rsvpform.submit();
 }
 
