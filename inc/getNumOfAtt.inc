@@ -8,7 +8,7 @@
 	echo $pInfoHtml;
 	function getNumberOfPeople ($_eventId){
 		require 'setPDO.inc';
-		$getNumberOfPeopleQuery = 'SELECT (ADDCNT + ROWCNT) AS TOTAL FROM (SELECT sum(addtionalAttendees) as ADDCNT, count(*) as ROWCNT FROM TEAM94.EVENT_ATTENDEES_TB WHERE eventID = :evtID) p;';
+		$getNumberOfPeopleQuery = 'SELECT (ADDCNT + ROWCNT) AS TOTAL FROM (SELECT sum(additionalAttendees) as ADDCNT, count(*) as ROWCNT FROM TEAM94.EVENT_ATTENDEES_TB WHERE eventID = :evtID) p;';
 		$getNumberOfPeople = $pdo->prepare($getNumberOfPeopleQuery);
 		$getNumberOfPeople->bindvalue(':evtID', $_eventId);
 		$getNumberOfPeople->execute();
