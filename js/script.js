@@ -29,7 +29,7 @@ function validateSName(regForm) {
 }
 
 function validatePWord(regForm) {
-    if (document.regForm.password1.value === document.regForm.password2.value) { 
+    if (document.regForm.password1.value === document.regForm.password2.value) {
         return true;
     }
     return false;
@@ -41,6 +41,33 @@ function validateReg(regForm) {
 	}
 	return false;
 }
-
-
 /** END Registration Validation **/
+
+/** show-hide in individual event page **/
+$('#show').click(function() {
+	$('#rsvp-content').show('blind');
+	$('#show').hide();
+	$('#hide').show();
+});
+
+$('#hide').click(function() {
+	$('#rsvp-content').hide('blind');
+	$('#hide').hide();
+	$('#show').show();
+});
+/** show-hide in individual event page **/
+
+
+/** RSVP-submit **/
+
+function rsvpSubmitFnc(eventID, id) {
+//     console.log("aaaaa");
+
+    var rsvpform = document.getElementById(id);
+    rsvpform.action = '../inc/insertRSVP.php';
+    rsvpform.submit();
+}
+
+
+
+/** RSVP-submit **/

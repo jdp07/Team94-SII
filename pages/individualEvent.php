@@ -106,7 +106,94 @@
 				<?php
 					require '../inc/getNumOfAtt.inc';
 				?>
-				<button type="button" class="btn btn-event">RSVP</button>
+
+				<div id="rsvp-buttons">
+				    <input type="button" id="hide" class="btn btn-event" value="Hide">
+				    <input type="button" id="show" class="btn btn-event" value="RSVP">
+				</div>
+				<div id="rsvp-content"><br><br>
+                        <?php
+                            if(!isset($_SESSION['loggedIn'])) { // not loggedin
+                                echo "<p style=\"font-weight: 400; color: red; font-size: 15pt\">Please login to RSVP now!</p>";
+                            }
+                            else { // loggedin
+                                $query = "SELECT * FROM TEAM94.EVENT_ATTENDEES_TB WHERE userID = :userID AND eventID = :eventID";
+                                $query = $pdo->prepare($query);
+
+                                $query->bindvalue(':userID', $_SESSION['id']);
+                                $query->bindvalue(':eventID', $_GET['eventID']);
+                                $query->execute();
+
+                                if($query->rowCount() > 0) { // registed for the event
+
+                                    foreach($query as $row) {
+                        				$donatedAmountByUser = $row['donationAmount'];
+                        			}
+
+                                    echo "<p style=\"font-weight: 400; color: blue; font-size: 15pt\">You register for the event already!</p>";
+                                    echo "<p style=\"margin-top: -5pt\">You donated <b>$" . $donatedAmountByUser . "</b></p>";
+                                }
+
+                                else { // registed for the event yet
+                                	if (!isset($_GET['do-amount'])) {
+
+                                	    $do_cost_min = (int)$minCost;
+                                        $do_cost_5 = $do_cost_min+5;
+                                        $do_cost_10 = $do_cost_min+10;
+                                        $do_cost_20 = $do_cost_min+20;
+                                        $do_cost_50 = $do_cost_min+50;
+                                        $do_cost_75 = $do_cost_min+75;
+
+                                        echo "<form id=\"rsvpInputForm\" name=\"rsvpInputForm1\" method=\"get\" action=\"../js/script.js\">";
+                                        echo "<input type=\"hidden\" id=\"eventID\" name=\"eventID\" value=\"" . $_GET['eventID'] ."\">";
+                                        echo "<input type=\"hidden\" id=\"userID\" name=\"userID\" value=\"" . $_SESSION['id'] ."\">";
+                                        echo "<p>Donation $";
+
+                                        echo "<select id=\"do-amount\" name=\"do-amount\">";
+                                        echo "<option value='" . $do_cost_min . "'>" . $do_cost_min . "</option>";
+                                        echo "<option value='" . $do_cost_5 . "'>" . $do_cost_5 . "</option>";
+                                        echo "<option value='" . $do_cost_10 . "'>" . $do_cost_10 . "</option>";
+                                        echo "<option value='" . $do_cost_20 . "'>" . $do_cost_20 . "</option>";
+                                        echo "<option value='" . $do_cost_50 . "'>" . $do_cost_50 . "</option>";
+                                        echo "<option value='" . $do_cost_75 . "'>" . $do_cost_75 . "</option>";
+                                        echo "<option value='1000000'>1000000</option>";
+                                        echo "</select>";
+
+                                        echo "</p>";
+
+                                        echo "<input type=\"hidden\" id=\"dietaryReqs\" name=\"dietaryReqs\" value=\"\">";
+                                        echo "<input type=\"hidden\" id=\"additionalAttendees\" name=\"additionalAttendees\" value=\"\">";
+
+                                        echo "<input type=\"button\" id=\"rsvpSubmitBtn\" name=\"rsvpSubmit\" class=\"btn btn-event\" value=\"RSVP\" onclick=\"rsvpSubmitFnc('". $_GET['eventID'] . "', 'rsvpInputForm')\">";
+
+                                        echo "</form>";
+//                                         <input type=\"button\" id=\"searchBtn\" name=\"searchForm\" value=\" \"  onclick=\"searchDo()\">
+                                    }
+
+                                    else { // when submitted RSVP
+
+//                                         echo "sdfsafasfdsafdsadfsadfsadfsda";
+
+                                	    require '../inc/insertRSVP.php';
+
+//                                 	    echo insertRSVPinfo($_GET['eventID'], $_SESSION['id'], $_GET['do-amount'], $_GET['dietaryReqs'], $_GET['additionalAttendees']);
+//                                         require '../inc/setPDO.inc';
+
+
+
+//                                 	    insertRSVPinfo($_GET['eventID'], $_SESSION['id'], $_GET['do-amount'], $_GET['dietaryReqs'], 0);
+                                    }
+                                }
+
+                            }
+                        ?>
+
+<!--                 <p>ddddd</p> -->
+				</div> <!-- end of div: rsvp-content -->
+				<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+				<script type="text/javascript" src="../js/jquery.js"></script>
+                <script type="text/javascript" src="../js/jquery-ui.js"></script>
+                <script type="text/javascript" src="../js/script.js"></script>
 			</div>
 			<div class = "col-md-4"></div>
 		</div>

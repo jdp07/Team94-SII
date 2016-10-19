@@ -256,6 +256,18 @@ body {
 	padding: 0px 5px 0px 5px;
 }
 
+#hide {
+	display:none;
+}
+
+#show {
+	display:true;
+}
+
+#rsvp-content {
+	display:none;
+}
+
 /*
     Event List Page
 */
