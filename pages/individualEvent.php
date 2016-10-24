@@ -105,14 +105,34 @@
 <!-- 				<p><b>23</b> people have RSVP'd to this event. Click the button below to RSVP now!</p> -->
 				<?php
 					require '../inc/getNumOfAtt.inc';
-				?>
 
-				<div id="rsvp-buttons">
-				    <input type="button" id="hide" class="btn btn-event" value="Hide">
-				    <input type="button" id="show" class="btn btn-event" value="RSVP">
-				</div>
-				<div id="rsvp-content"><br><br>
-                        <?php
+
+				try {
+					    	$query11 = $pdo->prepare('SELECT COUNT(*) AS isPastEvent FROM EVENTS_TB WHERE eventID = :id AND eventDate > CURDATE()');
+						    $query11->bindvalue(':id', $_GET['eventID']);
+						    $query11->execute();
+					    }
+					    catch (PDOException $e) {
+						    echo $e->getMessage();
+					    }
+
+					    foreach($query11 as $result) {
+						    $isPastEvent = $result['isPastEvent'];
+				    	}
+
+				    	if($isPastEvent > 0) { // this is a upcoming event
+
+            				echo "<div id=\"rsvp-buttons\">";
+			            	echo "<input type=\"button\" id=\"hide\" class=\"btn btn-event\" value=\"Hide\">";
+            				echo "<input type=\"button\" id=\"show\" class=\"btn btn-event\" value=\"RSVP\">";
+            				echo "</div>";
+            				echo "<div id=\"rsvp-content\"><br><br>";
+
+
+
+
+
+
                             if(!isset($_SESSION['loggedIn'])) { // not loggedin
                                 echo "<p style=\"font-weight: 400; color: red; font-size: 15pt\">Please login to RSVP now!</p>";
                             }
@@ -186,6 +206,13 @@
                                 }
 
                             }
+                        }
+
+                        else {
+                            echo "<div>";
+                            echo "<p style=\"font-weight: 400; color: red; font-size: 15pt\">This is a past event</p>";
+                        }
+
                         ?>
 
 <!--                 <p>ddddd</p> -->
