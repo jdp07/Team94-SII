@@ -130,7 +130,7 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"eventID\" name=\"eventID\" value=\"" . $eventID ."\">";
 						echo "<input type=\"hidden\" id=\"userID\" name=\"userID\" value=\"" . $_SESSION['id'] ."\">";
 						echo "<input type=\"hidden\" id=\"type\" name=\"type\" value=\"1\">";
-						echo "<p>Donation $";
+						echo "<p>Donation $ ";
 
 						echo "<select id=\"do-amount\" name=\"do-amount\">";
 
