@@ -68,6 +68,30 @@ function rsvpSubmitFnc(eventID, id) {
     rsvpform.submit();
 }
 
+function editor(){
+	change(0);
+	setTimeout( function() { dothingswithsleep( 1 ); }, 1000 );
+	change(1);
+	setTimeout( function() { dothingswithsleep( 1 ); }, 1000 );
+	change(2);
+	setTimeout( function() { dothingswithsleep( 1 ); }, 1000 );
+	change(3);
+	var s = document.createElement('submit');
+	document.appendChild(s);
+}
+
+function change(index){
+		var e = document.getElementsByTagName('span')[index];
+
+		var d = document.createElement('input');
+		var i = document.createTextNode("hello");
+		d.type = "text";
+		d.innerHTML = e.innerHTML;
+
+		d.value = d.innerHTML;
+		e.parentNode.insertBefore(d, e);
+		e.parentNode.removeChild(e);
+}
 
 
 /** RSVP-submit **/

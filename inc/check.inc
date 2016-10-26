@@ -24,6 +24,7 @@
 			session_start();
 			foreach($query as $result) {
 				$_SESSION['id'] = $result['userID'];
+				$_SESSION['userType'] = $result['userType'];
 			}
 		}
 

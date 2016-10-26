@@ -59,7 +59,7 @@
 			$query->bindvalue(':password', $password);
             $query->bindvalue(':salt', $salt);
 			$query->execute();//Inserts all the registration data into the DB
-			echo "<h5>Thank you, your details have been recorded</h5>";
+			echo "<body><h5>Thank you, your details have been recorded</h5></body>";
 			?>
 		</div>
 	<?php

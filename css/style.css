@@ -307,3 +307,31 @@ body {
     margin-top: 100px;
     margin-bottom: 100px;
 }
+
+
+.event-update {
+	width:22rem;
+}
+
+.event-head {
+	margin: auto;
+	display: block;
+}
+
+.headUpdateEvent {
+	margin: auto;
+	display: block;
+	width: 24rem;
+	height: 5rem;
+	font-size: large;
+	text-align: center;
+}
+
+.saveEvent {
+	display: block;
+	margin: auto;
+}
+
+.event-details {
+	width: 30rem;
+}
