@@ -67,8 +67,8 @@
 				$donationGoal = 1000 + ($getCount['TOTAL'] * 3);
 				//echo peopleCount['TOTAL'];
 
-			if ($_SESSION['userType'] == 'A'){
-			}
+//			if ($_SESSION['userType'] == 'A'){
+//			}
 		?>
 
 		<form method="post" action="updateEvent.php">
