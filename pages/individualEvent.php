@@ -9,6 +9,7 @@
 
 <body>
     <div class="container-fluid event">
+
         <!-- HOME NAVIGATION -->
         <?php
             require '../inc/nav.inc';
@@ -21,6 +22,17 @@
 			}
 
 			require '../inc/setPDO.inc';
+			function getPeople(){
+				require '../inc/setPDO.inc';
+
+				$numPeople = $pdo->prepare('SELECT (ADDCNT + ROWCNT) AS TOTAL FROM (SELECT sum(additionalAttendees) as ADDCNT, count(*) as ROWCNT FROM TEAM94.EVENT_ATTENDEES_TB WHERE eventID = :evtID) p;');
+				$numPeople->bindvalue(':evtID', $_GET['eventID']);
+				$numPeople->execute();
+				return $numPeople->fetch();
+			}
+		
+			$getCount = getPeople();
+			//echo $getCount['TOTAL'];
 
 			$result = $pdo->prepare('SELECT * FROM EVENTS_TB WHERE EVENTS_TB.eventID = :id');
 			$result->bindvalue(':id', $_GET['eventID']);
@@ -49,19 +61,22 @@
 				$address = $row['eventAddress'];
 				$startTime = $row['eventDate'];
 				$finishTime = $row['eventFinish'];
-				$donationGoal = $row['donationGoal'];
+				//$donationGoal = $row['donationGoal'];
 				$minCost = $row['minCost'];
-		?>
-		<?php
+			
+				$donationGoal = 1000 + ($getCount['TOTAL'] * 3);
+				//echo peopleCount['TOTAL'];
+		
 			if ($_SESSION['userType'] == 'A'){ 
 		?>
+
 		<form method="post" action="updateEvent.php">
 		<div class="event-head">
 			<input type="text" id="eventName" name="eventName" class="headUpdateEvent" value='<?php echo $eventName ?>'>
 		</div>
 
 		<div class = "event-donations">
-			<h3>Donation Goal: <b><input type="number" name="donationGoal" id="donationGoal" value='<?php echo $donationGoal ?>'></b></h3>
+			<h3>Donation Goal: <b><input type="number" name="donationGoal" id="donationGoal" value='<?php echo $donationGoal ?>' disabled></b></h3>
 			<h3>Amounted Donated: <b>$<?php echo $totalDonated ?></b></h3>
 		</div>
 
@@ -72,7 +87,7 @@
 		</div>
 
 		<!-- Event information and description row -->
-
+			
 		
 		<div class = "row">
 			<div class = "col-md-2"></div>

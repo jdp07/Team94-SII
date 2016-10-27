@@ -60,6 +60,7 @@
             $query->bindvalue(':salt', $salt);
 			$query->execute();//Inserts all the registration data into the DB
 			echo "<body><h5>Thank you, your details have been recorded</h5></body>";
+			header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/index.php");
 			?>
 		</div>
 	<?php

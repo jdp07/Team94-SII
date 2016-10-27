@@ -7,6 +7,7 @@
 
 	$pInfoHtml = makePersonHtml($getCountOfPeople['TOTAL'], $eventID);
 	echo $pInfoHtml;
+
 	function getNumberOfPeople ($_eventId){
         require 'setPDO.inc';
 		$getNumberOfPeopleQuery = 'SELECT (ADDCNT + ROWCNT) AS TOTAL FROM (SELECT sum(additionalAttendees) as ADDCNT, count(*) as ROWCNT FROM TEAM94.EVENT_ATTENDEES_TB WHERE eventID = :evtID) p;';
