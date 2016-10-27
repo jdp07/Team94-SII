@@ -33,6 +33,7 @@ if (isset($_POST['login'])){ //If logged in, redirect to index page
         if(isset($_SESSION['loggedIn'])){
             unset($_SESSION['loggedIn']);
             unset($_SESSION['id']);
+			unset($_SESSION['userType']);
             header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/index.php");
             exit();
         }
