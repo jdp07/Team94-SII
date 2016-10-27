@@ -24,7 +24,7 @@ require '../inc/header.inc';
             <div class="col-md-4 text-center">
                 <h4>Jenny Flanders</h4>
                 <p>Head accountant</p>
-                <img class="headshot" src="https://s-media-cache-ak0.pinimg.com/736x/a9/52/8e/a9528e333859163f113304aa240131da.jpg" alt="#">
+                <img class="headshot" src="../img/jenny.jpg" alt="#">
                 <p class="bio"><br>Howdy Doodly, I live on Evergreen Tce, live next to a family that never ages and spend my weekends managing the accounts for John's organisation.</p>
             </div>
             <div class="col-md-4 text-center">
