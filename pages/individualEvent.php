@@ -30,7 +30,7 @@
 				$numPeople->execute();
 				return $numPeople->fetch();
 			}
-		
+
 			$getCount = getPeople();
 			//echo $getCount['TOTAL'];
 
@@ -63,11 +63,12 @@
 				$finishTime = $row['eventFinish'];
 				//$donationGoal = $row['donationGoal'];
 				$minCost = $row['minCost'];
-			
+
 				$donationGoal = 1000 + ($getCount['TOTAL'] * 3);
 				//echo peopleCount['TOTAL'];
-		
-			if ($_SESSION['userType'] == 'A'){ 
+
+			if ($_SESSION['userType'] == 'A'){
+			}
 		?>
 
 		<form method="post" action="updateEvent.php">
@@ -87,8 +88,8 @@
 		</div>
 
 		<!-- Event information and description row -->
-			
-		
+
+
 		<div class = "row">
 			<div class = "col-md-2"></div>
 			<div class = "col-md-4 event-information">
@@ -108,7 +109,7 @@
 						</tr>
 					<input type="hidden" id="eventID" name="eventID" value="<?php echo $_GET['eventID']?>">
 				</table>
-					
+
 			</div>
 			<div class = "col-md-4 event-description">
 				<h3>What it's about</h3>
@@ -198,5 +199,5 @@
         	require '../inc/footer.inc';
         ?>
 </body>
-  
+
 
