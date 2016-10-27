@@ -139,6 +139,10 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"eventID\" name=\"eventID\" value=\"" . $eventID ."\">";
 						echo "<input type=\"hidden\" id=\"userID\" name=\"userID\" value=\"" . $_SESSION['id'] ."\">";
 						echo "<input type=\"hidden\" id=\"type\" name=\"type\" value=\"1\">";
+						echo "Cardholder's name <input type=\"text\" name=\"ch\" id=\"ch\" required><br>";
+						echo "Card number <input type=\"text\" name=\"cn\" id=\"cn\" required><br>";
+						echo "Expiry date <input type=\"text\" name=\"ed\" id=\"ed\" required><br>";
+						echo "Security code <input type=\"text\" name=\"sn\" id=\"sn\" required><br>";
 						echo "<p>Donation $ ";
 
 						echo "<select id=\"do-amount\" name=\"do-amount\">";
@@ -174,6 +178,10 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"eventID\" name=\"eventID\" value=\"" . $_GET['eventID'] ."\">";
 						echo "<input type=\"hidden\" id=\"userID\" name=\"userID\" value=\"" . $_SESSION['id'] ."\">";
 						echo "<input type=\"hidden\" id=\"type\" name=\"type\" value=\"2\">";
+						echo "Cardholder's name <input type=\"text\" name=\"ch\" id=\"ch\" required><br>";
+						echo "Card number <input type=\"text\" name=\"cn\" id=\"cn\" required><br>";
+						echo "Expiry date <input type=\"text\" name=\"ed\" id=\"ed\" required><br>";
+						echo "Security code <input type=\"text\" name=\"sn\" id=\"sn\" required><br>";
 						echo "<p>Donation $ ";
 
 						echo "<select id=\"do-amount\" name=\"do-amount\">";
