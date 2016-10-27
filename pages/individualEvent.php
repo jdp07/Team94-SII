@@ -16,23 +16,23 @@
         ?>
         <!-- END HOME NAVIGATION -->
 
-		<?php
+		<?php 
 			if(!isset($_GET['eventID'])){
 				header("Location: http://{$_SERVER['HTTP_HOST']}/Team94-SII/pages/404.php");
 			}
 
 			require '../inc/setPDO.inc';
+		
+			//Function to get the number of people coming
 			function getPeople(){
 				require '../inc/setPDO.inc';
-
 				$numPeople = $pdo->prepare('SELECT (ADDCNT + ROWCNT) AS TOTAL FROM (SELECT sum(additionalAttendees) as ADDCNT, count(*) as ROWCNT FROM TEAM94.EVENT_ATTENDEES_TB WHERE eventID = :evtID) p;');
 				$numPeople->bindvalue(':evtID', $_GET['eventID']);
 				$numPeople->execute();
 				return $numPeople->fetch();
 			}
-
+			
 			$getCount = getPeople();
-			//echo $getCount['TOTAL'];
 
 			$result = $pdo->prepare('SELECT * FROM EVENTS_TB WHERE EVENTS_TB.eventID = :id');
 			$result->bindvalue(':id', $_GET['eventID']);
