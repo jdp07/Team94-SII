@@ -139,20 +139,29 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"eventID\" name=\"eventID\" value=\"" . $eventID ."\">";
 						echo "<input type=\"hidden\" id=\"userID\" name=\"userID\" value=\"" . $_SESSION['id'] ."\">";
 						echo "<input type=\"hidden\" id=\"type\" name=\"type\" value=\"1\">";
-						echo "<p>Donation $ ";
+
+						echo "<div style=\"text-align: center;\"><table style=\"text-align: left; margin: auto;\">";
+						echo "<col id='col1' style='width: 46%;'>";
+						echo "<col id='col2' style='width: 54%;'>";
+
+						echo "<tr><td>Cardholder's name </td><td><input type=\"text\" name=\"ch\" id=\"ch\" required style=\"width: 150px\"></td></tr>";
+						echo "<tr><td>Card number </td><td><input type=\"text\" name=\"cn\" id=\"cn\" required style=\"width: 150px\"></td></tr>";
+						echo "<tr><td>Expiry date </td><td><input type=\"text\" name=\"ed\" id=\"ed\" required style=\"width: 80px\"></td></tr>";
+						echo "<tr><td>Security code </td><td><input type=\"text\" name=\"sn\" id=\"sn\" required style=\"width: 50px\"></td></tr>";
+						echo "<tr><td>Amount $ </td><td>";
 
 						echo "<select id=\"do-amount\" name=\"do-amount\">";
 
 						donateAmountDisplayReDo($donatedAmountByUser);
 
-						echo "</select>";
+						echo "</select></td></tr>";
 
-						echo "</p>";
+						echo "</table></div><br>";
 
 						echo "<input type=\"hidden\" id=\"dietaryReqs\" name=\"dietaryReqs\" value=\"\">";
 						echo "<input type=\"hidden\" id=\"additionalAttendees\" name=\"additionalAttendees\" value=\"\">";
 
-						echo "<input type=\"button\" id=\"rsvpSubmitBtn\" name=\"rsvpSubmit\" class=\"btn btn-event\" value=\"Donate\" onclick=\"rsvpSubmitFnc('". $eventID . "', 'rsvpInputForm')\">";
+						echo "<input type=\"button\" id=\"rsvpSubmitBtn\" name=\"rsvpSubmit\" class=\"btn btn-event\" value=\"Donate\" onclick=\"submitConfirmation('". $eventID . "', 'rsvpInputForm')\">";
 
 						echo "</form>";
 
@@ -174,20 +183,30 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"eventID\" name=\"eventID\" value=\"" . $_GET['eventID'] ."\">";
 						echo "<input type=\"hidden\" id=\"userID\" name=\"userID\" value=\"" . $_SESSION['id'] ."\">";
 						echo "<input type=\"hidden\" id=\"type\" name=\"type\" value=\"2\">";
-						echo "<p>Donation $ ";
+
+
+						echo "<div style=\"text-align: center;\"><table style=\"text-align: left; margin: auto;\">";
+						echo "<col id='col1' style='width: 46%;'>";
+						echo "<col id='col2' style='width: 54%;'>";
+
+						echo "<tr><td>Cardholder's name </td><td><input type=\"text\" name=\"ch\" id=\"ch\" required style=\"width: 150px\"></td></tr>";
+						echo "<tr><td>Card number </td><td><input type=\"text\" name=\"cn\" id=\"cn\" required style=\"width: 150px\"></td></tr>";
+						echo "<tr><td>Expiry date </td><td><input type=\"text\" name=\"ed\" id=\"ed\" required style=\"width: 80px\"></td></tr>";
+						echo "<tr><td>Security code </td><td><input type=\"text\" name=\"sn\" id=\"sn\" required style=\"width: 50px\"></td></tr>";
+						echo "<tr><td>Amount $ </td><td>";
 
 						echo "<select id=\"do-amount\" name=\"do-amount\">";
 
 						echo donateAmountDisplayRegi((int)$minCost);
 
-						echo "</select>";
+						echo "</select></td></tr>";
 
-						echo "</p>";
+						echo "</table></div><br>";
 
 						echo "<input type=\"hidden\" id=\"dietaryReqs\" name=\"dietaryReqs\" value=\"\">";
 						echo "<input type=\"hidden\" id=\"additionalAttendees\" name=\"additionalAttendees\" value=\"\">";
 
-						echo "<input type=\"button\" id=\"rsvpSubmitBtn\" name=\"rsvpSubmit\" class=\"btn btn-event\" value=\"RSVP\" onclick=\"rsvpSubmitFnc('". $_GET['eventID'] . "', 'rsvpInputForm')\">";
+						echo "<input type=\"button\" id=\"rsvpSubmitBtn\" name=\"rsvpSubmit\" class=\"btn btn-event\" value=\"RSVP\" onclick=\"submitConfirmation('". $_GET['eventID'] . "', 'rsvpInputForm')\">";
 
 						echo "</form>";
 

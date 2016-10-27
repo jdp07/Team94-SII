@@ -60,6 +60,32 @@ $('#hide').click(function() {
 
 /** RSVP-submit **/
 
+function submitConfirmation(eventID, id) {
+//     console.log("aaaaa");
+
+     var _eventID = eventID;
+     var _id = id;
+
+    if(confirm("Click OK to complete payment.")) {
+//         rsvpSubmitFnc(eventID, id);
+//        document.write("input: " + _eventID, _id);
+//         console.log("input: " + _eventID + ", " + _id);
+    rsvpSubmitFnc(_eventID, _id);
+
+    }
+
+    else {
+//         console.log("cancel: " + _eventID + ", " + _id);
+    }
+
+
+//     var rsvpform = document.getElementById(id);
+//     rsvpform.action = '../pages/insertRSVP.php';
+//     rsvpform.submit();
+//
+//     rsvpSubmitFnc
+}
+
 function rsvpSubmitFnc(eventID, id) {
 //     console.log("aaaaa");
 
