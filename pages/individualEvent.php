@@ -67,6 +67,9 @@
 				$donationGoal = 1000 + ($getCount['TOTAL'] * 3);
 				//echo peopleCount['TOTAL'];
 		
+			if(!isset($_SESSION['userType'])){
+				$_SESSION['userType'] = 'M';	
+			}
 			if ($_SESSION['userType'] == 'A'){ 
 		?>
 
