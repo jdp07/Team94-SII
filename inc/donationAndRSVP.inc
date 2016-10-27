@@ -125,16 +125,13 @@ function donationAndRSVP($eventID, $minCost) {
 
 					echo "<div id=\"rsvp-buttons\">";
                     echo "<input type=\"button\" id=\"hide\" class=\"btn btn-event\" value=\"Hide\">";
-                    echo "<input type=\"button\" id=\"show\" class=\"btn btn-event\" value=\"Donate\">";
+                    echo "<input type=\"button\" id=\"show\" class=\"btn btn-event\" value=\"RSVP\">";
                     echo "</div>";
                     echo "<div id=\"rsvp-content\"><br>";
 
 					echo "<p style=\"font-weight: 400; color: blue; font-size: 15pt\">You have registered for the event already!</p>";
 					echo "<p style=\"margin-top: -5pt\">You donated <b>$ " . $donatedAmountByUser . "</b></p>";
-					echo "<p style=\"margin-top: -5pt\">You can donate more if you want</b></p>";
-					echo "<br>";
-
-
+					echo "<p style=\"margin-top: -5pt\">You can donate more</b></p>";
 
 					if($donatedAmountByUser < 500) { // loggedin, registed, can donate more
 
@@ -155,7 +152,7 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"dietaryReqs\" name=\"dietaryReqs\" value=\"\">";
 						echo "<input type=\"hidden\" id=\"additionalAttendees\" name=\"additionalAttendees\" value=\"\">";
 
-						echo "<input type=\"button\" id=\"rsvpSubmitBtn\" name=\"rsvpSubmit\" class=\"btn btn-event\" value=\"RSVP\" onclick=\"rsvpSubmitFnc('". $eventID . "', 'rsvpInputForm')\">";
+						echo "<input type=\"button\" id=\"rsvpSubmitBtn\" name=\"rsvpSubmit\" class=\"btn btn-event\" value=\"Donate\" onclick=\"rsvpSubmitFnc('". $eventID . "', 'rsvpInputForm')\">";
 
 						echo "</form>";
 
@@ -168,7 +165,7 @@ function donationAndRSVP($eventID, $minCost) {
 
 				        echo "<div id=\"rsvp-buttons\">";
                         echo "<input type=\"button\" id=\"hide\" class=\"btn btn-event\" value=\"Hide\">";
-                        echo "<input type=\"button\" id=\"show\" class=\"btn btn-event\" value=\"Donate\">";
+                        echo "<input type=\"button\" id=\"show\" class=\"btn btn-event\" value=\"RSVP\">";
                         echo "</div>";
                         echo "<div id=\"rsvp-content\"><br>";
 
