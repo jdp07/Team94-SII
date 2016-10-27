@@ -63,13 +63,17 @@ $('#hide').click(function() {
 function submitConfirmation(eventID, id) {
 //     console.log("aaaaa");
 
+     var _eventID = eventID;
+     var _id = id;
+
     if(confirm("Click OK to payment.")) {
 //         rsvpSubmitFnc(eventID, id);
-        document.write(eventID, id);
+//        document.write("input: " + _eventID, _id);
+        console.log("input: " + _eventID, _id);
     }
 
     else {
-        document.write("cancelled");
+        console.log("cancel: " + _eventID, _id);
     }
 
 
