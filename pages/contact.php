@@ -25,6 +25,43 @@ require '../inc/header.inc';
                 <img src="../img/map.png">
             </div>
         </div>
+
+        <?php
+            //If regular user
+            if(!isset($_SESSION['userType'])){
+                $_SESSION['userType'] = 'M';    
+            }
+
+            //If administrative user
+            if ($_SESSION['userType'] == 'A'){
+                $query = $pdo->prepare('SELECT * FROM USER_TB');
+                $query->execute();
+
+                //Your donations header
+                echo('<div class = "col-md-2"></div><div class = "col-md-8">');
+                echo('  <div class = "event-list-donation-head"><h1>Our Members</h1></div>');
+                echo('  <table class = "table table-striped">');
+                echo('      <tr class = "table-heading"><td>First name</td><td>Last name</td><td>User Type</td><td>Email</td></tr>');
+
+                //Find event name, donation amount and donation date
+                foreach($query as $result) {
+                    $firstName = $result['firstName'];
+                    $lastName = $result['lastName'];
+                    $userType = $result['userType'];
+                    $email = $result['email'];
+
+                    echo('<tr><td>'.$firstName.'</td>');
+                    echo('<td>'.$lastName.'</td>');
+                    echo('<td>'.$userType.'</td>');
+                    echo('<td>'.$email.'</td></tr>');
+                }
+
+                //Finish rest of table
+                echo('  </table>');
+                echo('</div><div class = "col-md-2"></div>');
+            }
+
+        ?>
         
     </div>
 <?php //Footer
