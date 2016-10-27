@@ -88,18 +88,22 @@ function donationAndRSVP($eventID, $minCost) {
 
     if($isPastEvent > 0) { // this is a upcoming event
 
-        echo "<div id=\"rsvp-buttons\">";
-        echo "<input type=\"button\" id=\"hide\" class=\"btn btn-event\" value=\"Hide\">";
-        echo "<input type=\"button\" id=\"show\" class=\"btn btn-event\" value=\"RSVP\">";
-        echo "</div>";
-        echo "<div id=\"rsvp-content\"><br>";
+
 
         if(!isset($_SESSION['loggedIn'])) { // not loggedin
+
+
+            echo "<div id=\"rsvp-buttons\">";
+            echo "<input type=\"button\" id=\"hide\" class=\"btn btn-event\" value=\"Hide\">";
+            echo "<input type=\"button\" id=\"show\" class=\"btn btn-event\" value=\"RSVP\">";
+            echo "</div>";
+            echo "<div id=\"rsvp-content\"><br>";
+
+
             echo "<p style=\"font-weight: 400; color: red; font-size: 15pt\">Please login to RSVP now!</p>";
         }
 
         else { // loggedin
-
 
 
 
@@ -112,19 +116,24 @@ function donationAndRSVP($eventID, $minCost) {
 				$query->bindvalue(':eventID', $eventID);
 				$query->execute();
 
-				if($query->rowCount() > 0) { // registed for the event
+				if($query->rowCount() > 0) { // loggedin, registed for the event
 
 					foreach($query as $row) {
 						$donatedAmountByUser = $row['donationAmount'];
 					}
 
+
+					echo "<div id=\"rsvp-buttons\">";
+                    echo "<input type=\"button\" id=\"hide\" class=\"btn btn-event\" value=\"Hide\">";
+                    echo "<input type=\"button\" id=\"show\" class=\"btn btn-event\" value=\"RSVP\">";
+                    echo "</div>";
+                    echo "<div id=\"rsvp-content\"><br>";
+
 					echo "<p style=\"font-weight: 400; color: blue; font-size: 15pt\">You have registered for the event already!</p>";
 					echo "<p style=\"margin-top: -5pt\">You donated <b>$ " . $donatedAmountByUser . "</b></p>";
-					echo "<br>";
+					echo "<p style=\"margin-top: -5pt\">You can donate more</b></p>";
 
-
-
-					if($donatedAmountByUser < 500) { // can donate more
+					if($donatedAmountByUser < 500) { // loggedin, registed, can donate more
 
 						echo "<form id=\"rsvpInputForm\" name=\"rsvpInputForm1\" method=\"get\" action=\"../js/script.js\">";
 						echo "<input type=\"hidden\" id=\"eventID\" name=\"eventID\" value=\"" . $eventID ."\">";
@@ -143,7 +152,7 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"dietaryReqs\" name=\"dietaryReqs\" value=\"\">";
 						echo "<input type=\"hidden\" id=\"additionalAttendees\" name=\"additionalAttendees\" value=\"\">";
 
-						echo "<input type=\"button\" id=\"rsvpSubmitBtn\" name=\"rsvpSubmit\" class=\"btn btn-event\" value=\"RSVP\" onclick=\"rsvpSubmitFnc('". $eventID . "', 'rsvpInputForm')\">";
+						echo "<input type=\"button\" id=\"rsvpSubmitBtn\" name=\"rsvpSubmit\" class=\"btn btn-event\" value=\"Donate\" onclick=\"rsvpSubmitFnc('". $eventID . "', 'rsvpInputForm')\">";
 
 						echo "</form>";
 
@@ -152,7 +161,13 @@ function donationAndRSVP($eventID, $minCost) {
 				} // if($query->rowCount() > 0) { // registed for the event
 
 
-				else { // not registed for the event yet
+				else { // loggedin, not registed for the event yet
+
+				        echo "<div id=\"rsvp-buttons\">";
+                        echo "<input type=\"button\" id=\"hide\" class=\"btn btn-event\" value=\"Hide\">";
+                        echo "<input type=\"button\" id=\"show\" class=\"btn btn-event\" value=\"RSVP\">";
+                        echo "</div>";
+                        echo "<div id=\"rsvp-content\"><br>";
 
 
 						echo "<form id=\"rsvpInputForm\" name=\"rsvpInputForm1\" method=\"get\" action=\"../js/script.js\">";
