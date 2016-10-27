@@ -140,9 +140,9 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"userID\" name=\"userID\" value=\"" . $_SESSION['id'] ."\">";
 						echo "<input type=\"hidden\" id=\"type\" name=\"type\" value=\"1\">";
 
-						echo "<div style=\"text-align: center;\"><table style=\"text-align: left;>";
-						echo "<col id='col1' style='width: 35%;'>";
-						echo "<col id='col2' style='width: 65%;'>";
+						echo "<div style=\"text-align: center;\"><table style=\"text-align: left;\">";
+						echo "<col id='col1' style='width: 40%;'>";
+						echo "<col id='col2' style='width: 60%;'>";
 
 						echo "<tr><td>Cardholder's name </td><td><input type=\"text\" name=\"ch\" id=\"ch\" required style=\"width: 120px\"></td></tr>";
 						echo "<tr><td>Card number </td><td><input type=\"text\" name=\"cn\" id=\"cn\" required style=\"width: 150px\"></td></tr>";
@@ -185,9 +185,9 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"type\" name=\"type\" value=\"2\">";
 
 
-						echo "<div style=\"text-align: center;\"><table style=\"text-align: left;>";
-						echo "<col id='col1' style='width: 35%;'>";
-						echo "<col id='col2' style='width: 65%;'>";
+						echo "<div style=\"text-align: center;\"><table style=\"text-align: left;\">";
+						echo "<col id='col1' style='width: 40%;'>";
+						echo "<col id='col2' style='width: 60%;'>";
 
 						echo "<tr><td>Cardholder's name </td><td><input type=\"text\" name=\"ch\" id=\"ch\" required style=\"width: 120px\"></td></tr>";
 						echo "<tr><td>Card number </td><td><input type=\"text\" name=\"cn\" id=\"cn\" required style=\"width: 150px\"></td></tr>";
