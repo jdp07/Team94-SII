@@ -139,19 +139,24 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"eventID\" name=\"eventID\" value=\"" . $eventID ."\">";
 						echo "<input type=\"hidden\" id=\"userID\" name=\"userID\" value=\"" . $_SESSION['id'] ."\">";
 						echo "<input type=\"hidden\" id=\"type\" name=\"type\" value=\"1\">";
-						echo "Cardholder's name <input type=\"text\" name=\"ch\" id=\"ch\" required style=\"width: 120px\"><br>";
-						echo "Card number <input type=\"text\" name=\"cn\" id=\"cn\" required style=\"width: 120px\"><br>";
-						echo "Expiry date <input type=\"text\" name=\"ed\" id=\"ed\" required style=\"width: 50px\"><br>";
-						echo "Security code <input type=\"text\" name=\"sn\" id=\"sn\" required style=\"width: 30px\"><br>";
-						echo "<p>Amount $ ";
+
+						echo "<table>";
+						echo "<col id='col1' style='width: 35%;'>";
+						echo "<col id='col2' style='width: 65%;'>";
+
+						echo "<tr><td>Cardholder's name </td><td><input type=\"text\" name=\"ch\" id=\"ch\" required style=\"width: 120px\"></td></tr>";
+						echo "<tr><td>Card number </td><td><input type=\"text\" name=\"cn\" id=\"cn\" required style=\"width: 150px\"></td></tr>";
+						echo "<tr><td>Expiry date </td><td><input type=\"text\" name=\"ed\" id=\"ed\" required style=\"width: 80px\"></td></tr>";
+						echo "<tr><td>Security code </td><td><input type=\"text\" name=\"sn\" id=\"sn\" required style=\"width: 50px\"></td></tr>";
+						echo "<tr><td>Amount $ </td><td>";
 
 						echo "<select id=\"do-amount\" name=\"do-amount\">";
 
 						donateAmountDisplayReDo($donatedAmountByUser);
 
-						echo "</select>";
+						echo "</select></td></tr>";
 
-						echo "</p>";
+						echo "</table>";
 
 						echo "<input type=\"hidden\" id=\"dietaryReqs\" name=\"dietaryReqs\" value=\"\">";
 						echo "<input type=\"hidden\" id=\"additionalAttendees\" name=\"additionalAttendees\" value=\"\">";
@@ -178,19 +183,24 @@ function donationAndRSVP($eventID, $minCost) {
 						echo "<input type=\"hidden\" id=\"eventID\" name=\"eventID\" value=\"" . $_GET['eventID'] ."\">";
 						echo "<input type=\"hidden\" id=\"userID\" name=\"userID\" value=\"" . $_SESSION['id'] ."\">";
 						echo "<input type=\"hidden\" id=\"type\" name=\"type\" value=\"2\">";
-						echo "Cardholder's name <input type=\"text\" name=\"ch\" id=\"ch\" required style=\"width: 120px\"><br>";
-						echo "Card number <input type=\"text\" name=\"cn\" id=\"cn\" required style=\"width: 120px\"><br>";
-						echo "Expiry date <input type=\"text\" name=\"ed\" id=\"ed\" required style=\"width: 50px\"><br>";
-						echo "Security code <input type=\"text\" name=\"sn\" id=\"sn\" required style=\"width: 30px\"><br>";
-						echo "<p>Amount $ ";
+
+						echo "<table>";
+						echo "<col id='col1' style='width: 35%;'>";
+						echo "<col id='col2' style='width: 65%;'>";
+
+						echo "<tr><td>Cardholder's name </td><td><input type=\"text\" name=\"ch\" id=\"ch\" required style=\"width: 120px\"></td></tr>";
+						echo "<tr><td>Card number </td><td><input type=\"text\" name=\"cn\" id=\"cn\" required style=\"width: 150px\"></td></tr>";
+						echo "<tr><td>Expiry date </td><td><input type=\"text\" name=\"ed\" id=\"ed\" required style=\"width: 80px\"></td></tr>";
+						echo "<tr><td>Security code </td><td><input type=\"text\" name=\"sn\" id=\"sn\" required style=\"width: 50px\"></td></tr>";
+						echo "<tr><td>Amount $ </td><td>";
 
 						echo "<select id=\"do-amount\" name=\"do-amount\">";
 
 						echo donateAmountDisplayRegi((int)$minCost);
 
-						echo "</select>";
+						echo "</select></td></tr>";
 
-						echo "</p>";
+						echo "</table>";
 
 						echo "<input type=\"hidden\" id=\"dietaryReqs\" name=\"dietaryReqs\" value=\"\">";
 						echo "<input type=\"hidden\" id=\"additionalAttendees\" name=\"additionalAttendees\" value=\"\">";
