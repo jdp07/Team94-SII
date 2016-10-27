@@ -69,11 +69,13 @@ function submitConfirmation(eventID, id) {
     if(confirm("Click OK to complete payment.")) {
 //         rsvpSubmitFnc(eventID, id);
 //        document.write("input: " + _eventID, _id);
-        console.log("input: " + _eventID + ", " + _id);
+//         console.log("input: " + _eventID + ", " + _id);
+    rsvpSubmitFnc(_eventID, _id);
+
     }
 
     else {
-        console.log("cancel: " + _eventID + ", " + _id);
+//         console.log("cancel: " + _eventID + ", " + _id);
     }
 
 
