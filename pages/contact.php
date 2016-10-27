@@ -3,9 +3,11 @@ require '../inc/header.inc';
 ?>
 <body>
     <div class="container-fluid contact">
+		<div class="nav-2">
         <?php //Navigation bar
             require '../inc/nav.inc';
         ?>
+		</div>
         <div class="contact-head text-center">
             <h2>Contact Us</h2>
         </div>
