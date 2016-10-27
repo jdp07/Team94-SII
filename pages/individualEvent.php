@@ -66,19 +66,13 @@
 
 				$donationGoal = 1000 + ($getCount['TOTAL'] * 3);
 				//echo peopleCount['TOTAL'];
-<<<<<<< HEAD
 		
 			if(!isset($_SESSION['userType'])){
 				$_SESSION['userType'] = 'M';	
 			}
 			if ($_SESSION['userType'] == 'A'){ 
-=======
 
-			if ($_SESSION['userType'] == 'A') {
-
->>>>>>> f7c10218389b2bc33004bb723c8d86dbd7eb9d79
-		?>
-
+?>
 		<form method="post" action="updateEvent.php">
 		<div class="event-head">
 			<input type="text" id="eventName" name="eventName" class="headUpdateEvent" value='<?php echo $eventName ?>'>
