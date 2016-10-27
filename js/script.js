@@ -60,6 +60,26 @@ $('#hide').click(function() {
 
 /** RSVP-submit **/
 
+function submitConfirmation(eventID, id) {
+//     console.log("aaaaa");
+
+    if(confirm("Click OK to payment.")) {
+//         rsvpSubmitFnc(eventID, id);
+        document.write(eventID, id);
+    }
+
+    else {
+        document.write("cancelled");
+    }
+
+
+//     var rsvpform = document.getElementById(id);
+//     rsvpform.action = '../pages/insertRSVP.php';
+//     rsvpform.submit();
+//
+//     rsvpSubmitFnc
+}
+
 function rsvpSubmitFnc(eventID, id) {
 //     console.log("aaaaa");
 
